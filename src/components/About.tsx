@@ -1,5 +1,5 @@
 
-import { CheckCircle, TrendingUp, Users } from 'lucide-react';
+import { CheckCircle, Target, Eye, Users } from 'lucide-react';
 
 const About = () => {
   const stats = [
@@ -32,65 +32,85 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-yellow-50 to-white">
+    <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Mission and Vision */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            About <span className="text-yellow-500">aboveCloud9.ai</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed">
+            We're pioneering the future of business intelligence through artificial intelligence, 
+            helping organizations transcend traditional limitations and achieve unprecedented growth.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <div className="bg-white p-8 shadow-sm border border-gray-200">
+              <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
+                <Target className="w-8 h-8 text-yellow-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To democratize AI technology and make it accessible for businesses of all sizes, 
+                enabling them to compete in the digital economy with intelligent automation and insights.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 shadow-sm border border-gray-200">
+              <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
+                <Eye className="w-8 h-8 text-yellow-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                A world where every business, regardless of size or industry, can harness the power of AI 
+                to innovate, grow, and create meaningful impact in their communities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Choose Us */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="animate-slide-in-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Why Choose
-              <span className="text-yellow-400"> aboveCloud9.ai?</span>
-            </h2>
+          <div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Why Choose Us
+            </h3>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              We're not just another AI company. We're your partners in digital transformation, 
-              helping businesses reach new heights with innovative solutions that deliver real results.
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              We combine cutting-edge technology with deep industry expertise to deliver 
+              solutions that drive real business results.
             </p>
 
             <div className="space-y-4 mb-10">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                  <span className="text-gray-700 text-lg">{benefit}</span>
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-colors duration-200">
               Learn More About Us
             </button>
           </div>
 
-          <div className="animate-fade-in">
+          <div>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white p-6 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow duration-200"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
+                  <div className="text-3xl font-bold text-yellow-500 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-medium">
+                  <div className="text-gray-600 font-medium text-sm">
                     {stat.label}
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">Proven Results</h3>
-                  <p className="text-gray-600">Trusted by industry leaders</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                Our AI solutions have helped companies across various industries achieve 
-                remarkable growth and efficiency improvements.
-              </p>
             </div>
           </div>
         </div>
@@ -98,9 +118,9 @@ const About = () => {
         {/* Leadership Section */}
         <div className="text-center mb-16">
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Meet Our <span className="text-yellow-400">Leadership</span>
+            Meet Our <span className="text-yellow-500">Leadership</span>
           </h3>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our experienced leaders drive innovation and guide our mission to transform businesses with AI.
           </p>
         </div>
@@ -109,19 +129,18 @@ const About = () => {
           {leadership.map((leader, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className="bg-white p-8 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow duration-200"
             >
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+              <div className="w-24 h-24 mx-auto mb-6 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-2">{leader.name}</h4>
-              <p className="text-yellow-500 font-semibold text-lg mb-4">{leader.role}</p>
-              <p className="text-gray-600 leading-relaxed">{leader.bio}</p>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
+              <p className="text-yellow-500 font-semibold mb-4">{leader.role}</p>
+              <p className="text-gray-600 leading-relaxed text-sm">{leader.bio}</p>
             </div>
           ))}
         </div>
