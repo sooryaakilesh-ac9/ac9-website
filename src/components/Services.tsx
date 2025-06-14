@@ -42,13 +42,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-yellow-500">Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
+            Our <span className="text-yellow-500 animate-slide-in-left animation-delay-200">Services</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
             Comprehensive AI solutions designed to transform your business operations 
             and drive sustainable growth across all departments.
           </p>
@@ -58,13 +58,14 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-200"
+              className="group bg-white p-8 border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up transform"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 bg-yellow-100 mb-6 flex items-center justify-center">
+              <div className="w-16 h-16 bg-yellow-100 mb-6 flex items-center justify-center group-hover:bg-yellow-200 transition-all duration-300 group-hover:scale-110">
                 <service.icon className="w-8 h-8 text-yellow-600" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
                 {service.title}
               </h3>
               
@@ -74,23 +75,23 @@ const Services = () => {
 
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="text-sm text-gray-600 flex items-center">
-                    <span className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0"></span>
+                  <li key={featureIndex} className="text-sm text-gray-600 flex items-center transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${featureIndex * 50}ms` }}>
+                    <span className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0 rounded-full"></span>
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-colors duration-200">
+              <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-all duration-300 group-hover:translate-x-2">
                 Learn More
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-colors duration-200">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1 animate-fade-in-up animation-delay-600">
             Schedule a Consultation
           </button>
         </div>

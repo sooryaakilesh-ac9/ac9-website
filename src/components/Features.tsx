@@ -42,14 +42,14 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
             Powerful Features for
-            <span className="text-yellow-400"> Modern Businesses</span>
+            <span className="text-yellow-400 animate-slide-in-left animation-delay-200"> Modern Businesses</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
             Discover how our AI-powered platform can transform your operations and drive unprecedented growth.
           </p>
         </div>
@@ -58,18 +58,18 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-yellow-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group bg-white p-8 rounded-xl border border-gray-100 hover:border-yellow-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-in-up transform"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 ${feature.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 transform`}>
                 <feature.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                 {feature.description}
               </p>
             </div>
