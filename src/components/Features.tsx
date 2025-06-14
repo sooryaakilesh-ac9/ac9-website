@@ -7,49 +7,49 @@ const Features = () => {
       icon: Brain,
       title: "Advanced AI Models",
       description: "Cutting-edge machine learning algorithms that evolve with your business needs.",
-      color: "bg-yellow-100/30 text-yellow-600 backdrop-blur-xl border-yellow-200/40"
+      color: "bg-yellow-100 text-yellow-600"
     },
     {
       icon: Zap,
       title: "Lightning Fast",
       description: "Process data and generate insights at unprecedented speeds with optimized performance.",
-      color: "bg-orange-100/30 text-orange-600 backdrop-blur-xl border-orange-200/40"
+      color: "bg-orange-100 text-orange-600"
     },
     {
       icon: Shield,
       title: "Enterprise Security",
       description: "Bank-level security protocols to keep your sensitive data protected at all times.",
-      color: "bg-green-100/30 text-green-600 backdrop-blur-xl border-green-200/40"
+      color: "bg-green-100 text-green-600"
     },
     {
       icon: BarChart3,
       title: "Real-time Analytics",
       description: "Make informed decisions with comprehensive analytics and predictive insights.",
-      color: "bg-purple-100/30 text-purple-600 backdrop-blur-xl border-purple-200/40"
+      color: "bg-purple-100 text-purple-600"
     },
     {
       icon: Cloud,
       title: "Cloud Native",
       description: "Scalable cloud infrastructure that grows with your business requirements.",
-      color: "bg-gray-100/30 text-gray-600 backdrop-blur-xl border-gray-200/40"
+      color: "bg-gray-100 text-gray-600"
     },
     {
       icon: Cpu,
       title: "Smart Automation",
       description: "Automate complex workflows and reduce manual tasks with intelligent systems.",
-      color: "bg-amber-100/30 text-amber-600 backdrop-blur-xl border-amber-200/40"
+      color: "bg-amber-100 text-amber-600"
     }
   ];
 
   return (
-    <section id="features" className="py-24 bg-gradient-to-br from-white to-yellow-50/30 overflow-hidden">
+    <section id="features" className="py-24 bg-gradient-to-br from-white to-yellow-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Powerful Features for
-            <span className="text-yellow-500 animate-slide-in-left animation-delay-200"> Modern Businesses</span>
+            <span className="text-yellow-500"> Modern Businesses</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover how our AI-powered platform can transform your operations and drive unprecedented growth.
           </p>
         </div>
@@ -58,24 +58,17 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white/20 backdrop-blur-2xl p-8 border border-white/30 rounded-2xl hover:border-yellow-300/60 hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-200 hover:-translate-y-4 animate-fade-in-up transform hover:scale-[1.02] overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group bg-white/60 backdrop-blur-sm p-8 border border-white/40 rounded-2xl hover:bg-white/80 hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
             >
-              {/* Enhanced glass reflection effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
-              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-white/60 via-transparent to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/20 rounded-2xl pointer-events-none"></div>
-              
-              <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-150 transform border relative z-10 shadow-lg`}>
+              <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200`}>
                 <feature.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-150 relative z-10">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-200">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-150 relative z-10">
+              <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
