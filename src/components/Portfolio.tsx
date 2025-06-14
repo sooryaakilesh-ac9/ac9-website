@@ -4,76 +4,89 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 const Portfolio = () => {
   const projects = [
     {
-      title: "Enterprise AI Dashboard",
-      description: "Real-time analytics platform for Fortune 500 company with predictive insights and automated reporting.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      category: "Analytics",
-      results: "40% efficiency increase"
-    },
-    {
-      title: "Smart Manufacturing System",
-      description: "IoT-integrated AI system for predictive maintenance and quality control in automotive manufacturing.",
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&h=400&fit=crop",
-      category: "Manufacturing",
-      results: "60% downtime reduction"
-    },
-    {
-      title: "Retail Intelligence Platform",
-      description: "Customer behavior analysis and inventory optimization for multi-location retail chain.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      category: "Retail",
-      results: "25% revenue increase"
-    },
-    {
-      title: "Healthcare AI Assistant",
-      description: "Clinical decision support system with natural language processing for medical professionals.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+      title: "Healthcare AI Platform",
       category: "Healthcare",
-      results: "50% faster diagnosis"
+      description: "Revolutionizing patient care with predictive analytics and automated diagnostic assistance.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+      results: ["40% faster diagnosis", "95% accuracy rate", "50% cost reduction"]
+    },
+    {
+      title: "Retail Optimization Suite",
+      category: "Retail",
+      description: "Advanced inventory management and customer behavior analysis for e-commerce platforms.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      results: ["30% inventory optimization", "25% sales increase", "60% better forecasting"]
+    },
+    {
+      title: "Financial Risk Assessment",
+      category: "Finance",
+      description: "Real-time fraud detection and risk analysis system for banking institutions.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      results: ["99.8% fraud detection", "80% faster processing", "70% risk reduction"]
+    },
+    {
+      title: "Manufacturing Automation",
+      category: "Manufacturing",
+      description: "Smart factory solutions with predictive maintenance and quality control systems.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      results: ["35% efficiency gain", "90% less downtime", "45% quality improvement"]
     }
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white overflow-hidden">
+    <section id="portfolio" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
-            Our <span className="text-yellow-500 animate-slide-in-left animation-delay-200">Portfolio</span>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+            Success <span className="text-yellow-500">Stories</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
-            Discover how we've helped businesses across industries achieve remarkable transformations 
-            with our AI-powered solutions.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+            Discover how we've transformed businesses across industries with innovative AI solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-in-up transform"
+              className="group bg-white shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="h-48 overflow-hidden">
+              <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-yellow-600 bg-yellow-50 px-3 py-1 group-hover:bg-yellow-100 transition-colors duration-300">
+                <div className="absolute top-4 left-4">
+                  <span className="bg-yellow-500 text-white px-3 py-1 text-xs font-semibold">
                     {project.category}
                   </span>
-                  <span className="text-sm font-semibold text-green-600 group-hover:scale-110 transition-transform duration-300">
-                    {project.results}
-                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300">{project.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{project.description}</p>
-                <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-all duration-300 group-hover:translate-x-2">
+              </div>
+              
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition-colors duration-300">
+                  {project.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold text-gray-800 text-sm">Key Results:</h4>
+                  {project.results.map((result, resultIndex) => (
+                    <div key={resultIndex} className="flex items-center text-sm text-gray-600">
+                      <div className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0"></div>
+                      {result}
+                    </div>
+                  ))}
+                </div>
+
+                <button className="flex items-center text-yellow-600 hover:text-yellow-700 font-semibold transition-colors duration-300 group-hover:translate-x-2">
                   View Case Study
-                  <ExternalLink className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
+                  <ExternalLink className="ml-2 w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -81,9 +94,9 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center">
-          <button className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1 animate-fade-in-up animation-delay-600">
-            View More Projects
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+          <button className="group bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center mx-auto animate-bounce-in animation-delay-600">
+            View All Projects
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
           </button>
         </div>
       </div>

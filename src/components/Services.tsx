@@ -1,56 +1,55 @@
 
-import { Brain, Zap, Shield, BarChart3, Cloud, Cpu, ArrowRight } from 'lucide-react';
+import { Brain, Zap, BarChart3, Shield, Cloud, Settings } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       icon: Brain,
-      title: "AI Strategy & Consulting",
-      description: "Comprehensive AI roadmap development and strategic implementation planning tailored to your business objectives.",
-      features: ["AI Readiness Assessment", "Custom Strategy Development", "ROI Analysis & Planning"]
+      title: "AI Strategy Consulting",
+      description: "Comprehensive AI roadmap development tailored to your business objectives and industry requirements.",
+      features: ["Strategic Planning", "ROI Analysis", "Implementation Roadmap"]
     },
     {
       icon: Zap,
       title: "Process Automation",
-      description: "Intelligent automation solutions that streamline operations and eliminate manual tasks across your organization.",
-      features: ["Workflow Optimization", "RPA Implementation", "Smart Document Processing"]
+      description: "Intelligent automation solutions that streamline operations and eliminate repetitive tasks.",
+      features: ["Workflow Optimization", "Smart Automation", "Performance Monitoring"]
     },
     {
       icon: BarChart3,
-      title: "Predictive Analytics",
-      description: "Advanced analytics platforms that provide actionable insights and forecast future trends for better decision-making.",
-      features: ["Predictive Modeling", "Real-time Dashboards", "Custom Reporting"]
+      title: "Data Analytics",
+      description: "Advanced analytics and machine learning models that transform data into actionable insights.",
+      features: ["Predictive Analytics", "Real-time Dashboards", "Custom Reports"]
     },
     {
       icon: Shield,
-      title: "AI Security & Compliance",
-      description: "Enterprise-grade security frameworks and compliance solutions specifically designed for AI implementations.",
-      features: ["Security Audits", "Compliance Monitoring", "Risk Assessment"]
+      title: "AI Security Solutions",
+      description: "Enterprise-grade security frameworks designed specifically for AI-powered applications.",
+      features: ["Security Audits", "Compliance Management", "Risk Assessment"]
     },
     {
       icon: Cloud,
       title: "Cloud AI Integration",
-      description: "Seamless integration of AI capabilities into your existing cloud infrastructure with scalable solutions.",
-      features: ["Cloud Migration", "API Development", "Scalable Architecture"]
+      description: "Seamless integration of AI capabilities into your existing cloud infrastructure.",
+      features: ["Cloud Migration", "API Integration", "Scalable Architecture"]
     },
     {
-      icon: Cpu,
+      icon: Settings,
       title: "Custom AI Development",
-      description: "Bespoke AI solutions built from the ground up to address your unique business challenges and requirements.",
-      features: ["Custom Model Training", "API Development", "Ongoing Support"]
+      description: "Bespoke AI solutions built from the ground up to meet your unique business challenges.",
+      features: ["Custom Models", "API Development", "Ongoing Support"]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50 overflow-hidden">
+    <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
-            Our <span className="text-yellow-500 animate-slide-in-left animation-delay-200">Services</span>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+            Our <span className="text-yellow-500">Services</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
-            Comprehensive AI solutions designed to transform your business operations 
-            and drive sustainable growth across all departments.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+            Comprehensive AI solutions designed to transform your business operations and drive sustainable growth.
           </p>
         </div>
 
@@ -58,14 +57,14 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white p-8 border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up transform"
+              className="group bg-white p-8 border border-gray-200 hover:border-yellow-300 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 bg-yellow-100 mb-6 flex items-center justify-center group-hover:bg-yellow-200 transition-all duration-300 group-hover:scale-110">
-                <service.icon className="w-8 h-8 text-yellow-600" />
+              <div className="w-16 h-16 bg-yellow-100 text-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                <service.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
                 {service.title}
               </h3>
               
@@ -75,24 +74,23 @@ const Services = () => {
 
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="text-sm text-gray-600 flex items-center transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${featureIndex * 50}ms` }}>
-                    <span className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0 rounded-full"></span>
+                  <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-all duration-300 group-hover:translate-x-2">
+              <button className="w-full bg-gray-100 hover:bg-yellow-500 text-gray-700 hover:text-white py-3 px-4 font-semibold transition-all duration-300 group-hover:scale-105">
                 Learn More
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1 animate-fade-in-up animation-delay-600">
-            Schedule a Consultation
+        <div className="text-center mt-16">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl animate-bounce-in animation-delay-800">
+            Get Custom Quote
           </button>
         </div>
       </div>

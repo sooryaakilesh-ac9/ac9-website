@@ -13,7 +13,7 @@ const Features = () => {
       icon: Zap,
       title: "Lightning Fast",
       description: "Process data and generate insights at unprecedented speeds with optimized performance.",
-      color: "bg-blue-100 text-blue-600"
+      color: "bg-orange-100 text-orange-600"
     },
     {
       icon: Shield,
@@ -31,13 +31,13 @@ const Features = () => {
       icon: Cloud,
       title: "Cloud Native",
       description: "Scalable cloud infrastructure that grows with your business requirements.",
-      color: "bg-cyan-100 text-cyan-600"
+      color: "bg-gray-100 text-gray-600"
     },
     {
       icon: Cpu,
       title: "Smart Automation",
       description: "Automate complex workflows and reduce manual tasks with intelligent systems.",
-      color: "bg-orange-100 text-orange-600"
+      color: "bg-amber-100 text-amber-600"
     }
   ];
 
@@ -45,9 +45,9 @@ const Features = () => {
     <section id="features" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
             Powerful Features for
-            <span className="text-yellow-400 animate-slide-in-left animation-delay-200"> Modern Businesses</span>
+            <span className="text-yellow-500 animate-slide-in-left animation-delay-200"> Modern Businesses</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
             Discover how our AI-powered platform can transform your operations and drive unprecedented growth.
@@ -58,14 +58,14 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-xl border border-gray-100 hover:border-yellow-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-in-up transform"
+              className="group bg-white p-8 border border-gray-200 hover:border-yellow-300 hover:shadow-xl transition-all duration-500 hover:-translate-y-3 animate-fade-in-up transform hover:scale-105"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`w-16 h-16 ${feature.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 transform`}>
+              <div className={`w-16 h-16 ${feature.color} flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 transform`}>
                 <feature.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-300">
                 {feature.title}
               </h3>
               

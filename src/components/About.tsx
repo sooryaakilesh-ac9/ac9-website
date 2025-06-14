@@ -37,7 +37,7 @@ const About = () => {
         
         {/* Mission and Vision */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
             About <span className="text-yellow-500">aboveCloud9.ai</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up animation-delay-200">
@@ -50,7 +50,7 @@ const About = () => {
               <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
                 <Target className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
                 To democratize AI technology and make it accessible for businesses of all sizes, 
                 enabling them to compete in the digital economy with intelligent automation and insights.
@@ -61,7 +61,7 @@ const About = () => {
               <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
                 <Eye className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
                 A world where every business, regardless of size or industry, can harness the power of AI 
                 to innovate, grow, and create meaningful impact in their communities.
@@ -73,7 +73,7 @@ const About = () => {
         {/* Why Choose Us */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="animate-fade-in-up animation-delay-800">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
               Why Choose Us
             </h3>
             
@@ -118,7 +118,7 @@ const About = () => {
 
         {/* Leadership Section */}
         <div className="text-center mb-16">
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-1500">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-fade-in-up animation-delay-1500">
             Meet Our <span className="text-yellow-500">Leadership</span>
           </h3>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-1600">
@@ -140,7 +140,7 @@ const About = () => {
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
+              <h4 className="text-xl font-bold text-gray-800 mb-2">{leader.name}</h4>
               <p className="text-yellow-500 font-semibold mb-4">{leader.role}</p>
               <p className="text-gray-600 leading-relaxed text-sm">{leader.bio}</p>
             </div>
