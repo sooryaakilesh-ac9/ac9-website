@@ -46,23 +46,33 @@ const About = () => {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <div className="bg-white p-8 shadow-sm border border-gray-200 animate-fade-in-up animation-delay-400">
-              <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
+            <div className="bg-white/40 backdrop-blur-2xl p-8 shadow-lg border border-white/50 rounded-2xl animate-fade-in-up animation-delay-400 relative overflow-hidden">
+              {/* Glass effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-white/60 via-transparent to-transparent"></div>
+              
+              <div className="w-16 h-16 bg-yellow-100/50 backdrop-blur-xl mx-auto mb-6 rounded-xl flex items-center justify-center border border-yellow-200/40 shadow-lg relative z-10">
                 <Target className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 relative z-10">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed relative z-10">
                 To democratize AI technology and make it accessible for businesses of all sizes, 
                 enabling them to compete in the digital economy with intelligent automation and insights.
               </p>
             </div>
 
-            <div className="bg-white p-8 shadow-sm border border-gray-200 animate-fade-in-up animation-delay-600">
-              <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
+            <div className="bg-white/40 backdrop-blur-2xl p-8 shadow-lg border border-white/50 rounded-2xl animate-fade-in-up animation-delay-600 relative overflow-hidden">
+              {/* Glass effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-white/60 via-transparent to-transparent"></div>
+              
+              <div className="w-16 h-16 bg-yellow-100/50 backdrop-blur-xl mx-auto mb-6 rounded-xl flex items-center justify-center border border-yellow-200/40 shadow-lg relative z-10">
                 <Eye className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 relative z-10">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed relative z-10">
                 A world where every business, regardless of size or industry, can harness the power of AI 
                 to innovate, grow, and create meaningful impact in their communities.
               </p>
@@ -84,14 +94,14 @@ const About = () => {
 
             <div className="space-y-4 mb-10">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-3 animate-fade-in-up" style={{ animationDelay: `${1000 + index * 100}ms` }}>
+                <div key={index} className="flex items-start space-x-3 animate-fade-in-up" style={{ animationDelay: `${1000 + index * 80}ms` }}>
                   <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 animate-fade-in-up animation-delay-1400">
+            <button className="bg-yellow-500/90 hover:bg-yellow-600/90 backdrop-blur-xl border border-yellow-300/40 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-150 hover:scale-105 animate-fade-in-up animation-delay-1400 shadow-lg">
               Learn More About Us
             </button>
           </div>
@@ -101,13 +111,17 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in"
-                  style={{ animationDelay: `${1200 + index * 100}ms` }}
+                  className="bg-white/40 backdrop-blur-2xl p-6 shadow-lg border border-white/50 rounded-2xl text-center hover:shadow-xl hover:scale-[1.02] transition-all duration-150 animate-scale-in relative overflow-hidden"
+                  style={{ animationDelay: `${1200 + index * 80}ms` }}
                 >
-                  <div className="text-3xl font-bold text-yellow-500 mb-2">
+                  {/* Glass effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
+                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                  
+                  <div className="text-3xl font-bold text-yellow-500 mb-2 relative z-10">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-medium text-sm">
+                  <div className="text-gray-600 font-medium text-sm relative z-10">
                     {stat.label}
                   </div>
                 </div>
@@ -130,19 +144,23 @@ const About = () => {
           {leadership.map((leader, index) => (
             <div
               key={index}
-              className="bg-white p-8 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${1700 + index * 200}ms` }}
+              className="bg-white/40 backdrop-blur-2xl p-8 shadow-lg border border-white/50 rounded-2xl text-center hover:shadow-xl hover:scale-[1.02] transition-all duration-150 animate-fade-in-up relative overflow-hidden"
+              style={{ animationDelay: `${1700 + index * 150}ms` }}
             >
-              <div className="w-24 h-24 mx-auto mb-6 overflow-hidden">
+              {/* Glass effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+              
+              <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-2xl shadow-lg relative z-10">
                 <img
                   src={leader.image}
                   alt={leader.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-150"
                 />
               </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-2">{leader.name}</h4>
-              <p className="text-yellow-500 font-semibold mb-4">{leader.role}</p>
-              <p className="text-gray-600 leading-relaxed text-sm">{leader.bio}</p>
+              <h4 className="text-xl font-bold text-gray-800 mb-2 relative z-10">{leader.name}</h4>
+              <p className="text-yellow-500 font-semibold mb-4 relative z-10">{leader.role}</p>
+              <p className="text-gray-600 leading-relaxed text-sm relative z-10">{leader.bio}</p>
             </div>
           ))}
         </div>

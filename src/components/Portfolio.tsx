@@ -49,30 +49,31 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-xl shadow-2xl shadow-gray-500/10 border border-white/20 overflow-hidden hover:shadow-3xl hover:shadow-yellow-500/10 transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="group relative bg-white/30 backdrop-blur-2xl shadow-2xl shadow-gray-500/15 border border-white/40 rounded-2xl overflow-hidden hover:shadow-3xl hover:shadow-yellow-500/20 transition-all duration-200 hover:-translate-y-3 animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Glass reflection effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none z-10"></div>
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent z-10"></div>
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white/40 via-transparent to-transparent z-10"></div>
+              {/* Enhanced glass reflection effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent pointer-events-none z-10 rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/70 to-transparent z-10"></div>
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-white/70 via-transparent to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30 rounded-2xl pointer-events-none z-10"></div>
               
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden rounded-t-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent"></div>
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="bg-yellow-500/80 backdrop-blur-md border border-yellow-300/30 text-white px-3 py-1 text-xs font-semibold">
+                  <span className="bg-yellow-500/90 backdrop-blur-xl border border-yellow-300/40 text-white px-3 py-1 text-xs font-semibold rounded-lg shadow-lg">
                     {project.category}
                   </span>
                 </div>
               </div>
               
               <div className="p-8 relative z-10">
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition-colors duration-150">
                   {project.title}
                 </h3>
                 
@@ -84,13 +85,13 @@ const Portfolio = () => {
                   <h4 className="font-semibold text-gray-800 text-sm">Key Results:</h4>
                   {project.results.map((result, resultIndex) => (
                     <div key={resultIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3 flex-shrink-0"></div>
                       {result}
                     </div>
                   ))}
                 </div>
 
-                <button className="flex items-center text-yellow-600 hover:text-yellow-700 font-semibold transition-colors duration-300 group-hover:translate-x-2">
+                <button className="flex items-center text-yellow-600 hover:text-yellow-700 font-semibold transition-all duration-150 group-hover:translate-x-1">
                   View Case Study
                   <ExternalLink className="ml-2 w-4 h-4" />
                 </button>
@@ -100,9 +101,9 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center">
-          <button className="group bg-yellow-500/80 hover:bg-yellow-600/80 backdrop-blur-md border border-yellow-300/30 text-white px-8 py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 flex items-center mx-auto animate-bounce-in animation-delay-600">
+          <button className="group bg-yellow-500/90 hover:bg-yellow-600/90 backdrop-blur-xl border border-yellow-300/40 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-150 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/30 flex items-center mx-auto animate-bounce-in animation-delay-600 shadow-lg">
             View All Projects
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-150" />
           </button>
         </div>
       </div>

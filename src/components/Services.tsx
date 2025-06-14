@@ -57,19 +57,20 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-xl p-8 border border-white/20 hover:border-yellow-300/50 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative bg-white/25 backdrop-blur-2xl p-8 border border-white/40 rounded-2xl hover:border-yellow-300/70 hover:shadow-2xl hover:shadow-yellow-500/25 transition-all duration-200 hover:-translate-y-3 animate-fade-in-up overflow-hidden"
+              style={{ animationDelay: `${index * 80}ms` }}
             >
-              {/* Glass reflection effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none"></div>
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
+              {/* Enhanced glass reflection effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent pointer-events-none rounded-2xl"></div>
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-white/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30 rounded-2xl pointer-events-none"></div>
               
-              <div className="w-16 h-16 bg-yellow-100/20 text-yellow-600 backdrop-blur-md border border-yellow-200/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative z-10">
+              <div className="w-16 h-16 bg-yellow-100/40 text-yellow-600 backdrop-blur-xl border border-yellow-200/50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:rotate-2 transition-all duration-150 relative z-10 shadow-lg">
                 <service.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-300 relative z-10">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-150 relative z-10">
                 {service.title}
               </h3>
               
@@ -80,13 +81,13 @@ const Services = () => {
               <ul className="space-y-2 mb-6 relative z-10">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-yellow-500 mr-3 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3 flex-shrink-0"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <button className="w-full bg-gray-100/20 hover:bg-yellow-500/80 backdrop-blur-md border border-gray-200/30 hover:border-yellow-300/50 text-gray-700 hover:text-white py-3 px-4 font-semibold transition-all duration-300 group-hover:scale-105 relative z-10">
+              <button className="w-full bg-white/30 hover:bg-yellow-500/90 backdrop-blur-xl border border-white/40 hover:border-yellow-300/60 text-gray-700 hover:text-white py-3 px-4 rounded-xl font-semibold transition-all duration-150 group-hover:scale-[1.02] relative z-10 shadow-lg">
                 Learn More
               </button>
             </div>
@@ -94,7 +95,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-yellow-500/80 hover:bg-yellow-600/80 backdrop-blur-md border border-yellow-300/30 text-white px-8 py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 animate-bounce-in animation-delay-800">
+          <button className="bg-yellow-500/90 hover:bg-yellow-600/90 backdrop-blur-xl border border-yellow-300/40 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-150 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/30 animate-bounce-in animation-delay-800 shadow-lg">
             Get Custom Quote
           </button>
         </div>
