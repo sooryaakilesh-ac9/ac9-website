@@ -37,16 +37,16 @@ const About = () => {
         
         {/* Mission and Vision */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
             About <span className="text-yellow-500">aboveCloud9.ai</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up animation-delay-200">
             We're pioneering the future of business intelligence through artificial intelligence, 
             helping organizations transcend traditional limitations and achieve unprecedented growth.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <div className="bg-white p-8 shadow-sm border border-gray-200">
+            <div className="bg-white p-8 shadow-sm border border-gray-200 animate-fade-in-up animation-delay-400">
               <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
                 <Target className="w-8 h-8 text-yellow-600" />
               </div>
@@ -57,7 +57,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 shadow-sm border border-gray-200">
+            <div className="bg-white p-8 shadow-sm border border-gray-200 animate-fade-in-up animation-delay-600">
               <div className="w-16 h-16 bg-yellow-100 mx-auto mb-6 flex items-center justify-center">
                 <Eye className="w-8 h-8 text-yellow-600" />
               </div>
@@ -72,7 +72,7 @@ const About = () => {
 
         {/* Why Choose Us */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
+          <div className="animate-fade-in-up animation-delay-800">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
               Why Choose Us
             </h3>
@@ -84,24 +84,25 @@ const About = () => {
 
             <div className="space-y-4 mb-10">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-3">
+                <div key={index} className="flex items-start space-x-3 animate-fade-in-up" style={{ animationDelay: `${1000 + index * 100}ms` }}>
                   <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-colors duration-200">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 animate-fade-in-up animation-delay-1400">
               Learn More About Us
             </button>
           </div>
 
-          <div>
+          <div className="animate-fade-in-up animation-delay-1000">
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow duration-200"
+                  className="bg-white p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in"
+                  style={{ animationDelay: `${1200 + index * 100}ms` }}
                 >
                   <div className="text-3xl font-bold text-yellow-500 mb-2">
                     {stat.number}
@@ -117,25 +118,26 @@ const About = () => {
 
         {/* Leadership Section */}
         <div className="text-center mb-16">
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-1500">
             Meet Our <span className="text-yellow-500">Leadership</span>
           </h3>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-1600">
             Our experienced leaders drive innovation and guide our mission to transform businesses with AI.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto space-y-8">
           {leadership.map((leader, index) => (
             <div
               key={index}
-              className="bg-white p-8 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow duration-200"
+              className="bg-white p-8 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${1700 + index * 200}ms` }}
             >
               <div className="w-24 h-24 mx-auto mb-6 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
