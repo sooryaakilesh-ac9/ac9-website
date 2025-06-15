@@ -16,14 +16,6 @@ export interface Service {
   features: string[];
 }
 
-export interface Project {
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  results: string[];
-}
-
 export interface Stat {
   number: string;
   label: string;
@@ -120,37 +112,6 @@ const services: Service[] = [
   }
 ];
 
-const projects: Project[] = [
-  {
-    title: "Healthcare AI Platform",
-    category: "Healthcare",
-    description: "Revolutionizing patient care with predictive analytics and automated diagnostic assistance.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
-    results: ["40% faster diagnosis", "95% accuracy rate", "50% cost reduction"]
-  },
-  {
-    title: "Retail Optimization Suite",
-    category: "Retail",
-    description: "Advanced inventory management and customer behavior analysis for e-commerce platforms.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    results: ["30% inventory optimization", "25% sales increase", "60% better forecasting"]
-  },
-  {
-    title: "Financial Risk Assessment",
-    category: "Finance",
-    description: "Real-time fraud detection and risk analysis system for banking institutions.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    results: ["99.8% fraud detection", "80% faster processing", "70% risk reduction"]
-  },
-  {
-    title: "Manufacturing Automation",
-    category: "Manufacturing",
-    description: "Smart factory solutions with predictive maintenance and quality control systems.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-    results: ["35% efficiency gain", "90% less downtime", "45% quality improvement"]
-  }
-];
-
 const aboutData: AboutData = {
   stats: [
     { number: "500+", label: "Companies Transformed" },
@@ -185,5 +146,4 @@ const simulateFetch = <T>(data: T, delay = 30): Promise<T> =>
 
 export const fetchFeatures = (): Promise<Feature[]> => simulateFetch(features);
 export const fetchServices = (): Promise<Service[]> => simulateFetch(services);
-export const fetchPortfolio = (): Promise<Project[]> => simulateFetch(projects);
 export const fetchAboutData = (): Promise<AboutData> => simulateFetch(aboutData);
