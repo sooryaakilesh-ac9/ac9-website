@@ -33,7 +33,7 @@ const Features = () => {
               </div>
             ))
           ) : (
-            features.map((feature, index) => (
+            features?.map((feature, index) => (
               <div
                 key={index}
                 className="group bg-white/30 backdrop-blur-lg p-8 border border-white/20 shadow-lg rounded-2xl hover:bg-white/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1"

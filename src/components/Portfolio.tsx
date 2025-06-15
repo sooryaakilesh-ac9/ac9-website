@@ -35,7 +35,7 @@ const Portfolio = () => {
               </div>
             ))
           ) : (
-            projects.map((project, index) => (
+            projects?.map((project, index) => (
               <div
                 key={index}
                 className="group bg-white/30 backdrop-blur-lg border border-white/20 shadow-lg rounded-2xl overflow-hidden hover:bg-white/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1"

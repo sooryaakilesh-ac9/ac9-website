@@ -10,7 +10,7 @@ const About = () => {
     queryFn: fetchAboutData,
   });
 
-  const { stats, benefits, leadership } = data || {};
+  const { stats = [], benefits = [], leadership = [] } = data || {};
 
   return (
     <section id="about" className="py-20 bg-gray-50">

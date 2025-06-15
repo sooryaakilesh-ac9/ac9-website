@@ -1,7 +1,49 @@
 
 import { Brain, Zap, Shield, BarChart3, Cloud, Cpu, Settings, CheckCircle, Target, Eye } from 'lucide-react';
+import type { ElementType } from 'react';
 
-const features = [
+export interface Feature {
+  icon: ElementType;
+  title: string;
+  description: string;
+  color: string;
+}
+
+export interface Service {
+  icon: ElementType;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+export interface Project {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  results: string[];
+}
+
+export interface Stat {
+  number: string;
+  label: string;
+}
+
+export interface Leadership {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+}
+
+export interface AboutData {
+  stats: Stat[];
+  benefits: string[];
+  leadership: Leadership[];
+}
+
+
+const features: Feature[] = [
   {
     icon: Brain,
     title: "Advanced AI Models",
@@ -40,7 +82,7 @@ const features = [
   }
 ];
 
-const services = [
+const services: Service[] = [
   {
     icon: Brain,
     title: "AI Strategy Consulting",
@@ -79,7 +121,7 @@ const services = [
   }
 ];
 
-const projects = [
+const projects: Project[] = [
     {
       title: "Healthcare AI Platform",
       category: "Healthcare",
@@ -110,7 +152,7 @@ const projects = [
     }
 ];
 
-const aboutData = {
+const aboutData: AboutData = {
   stats: [
     { number: "500+", label: "Companies Transformed" },
     { number: "99.9%", label: "Uptime Guaranteed" },
@@ -141,7 +183,7 @@ const aboutData = {
 
 const simulateFetch = (data: any, delay = 50) => new Promise(resolve => setTimeout(() => resolve(data), delay));
 
-export const fetchFeatures = () => simulateFetch(features);
-export const fetchServices = () => simulateFetch(services);
-export const fetchPortfolio = () => simulateFetch(projects);
-export const fetchAboutData = () => simulateFetch(aboutData);
+export const fetchFeatures = (): Promise<Feature[]> => simulateFetch(features);
+export const fetchServices = (): Promise<Service[]> => simulateFetch(services);
+export const fetchPortfolio = (): Promise<Project[]> => simulateFetch(projects);
+export const fetchAboutData = (): Promise<AboutData> => simulateFetch(aboutData);
