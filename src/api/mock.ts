@@ -42,7 +42,6 @@ export interface AboutData {
   leadership: Leadership[];
 }
 
-
 const features: Feature[] = [
   {
     icon: Brain,
@@ -72,7 +71,7 @@ const features: Feature[] = [
     icon: Cloud,
     title: "Cloud Native",
     description: "Scalable cloud infrastructure that grows with your business requirements.",
-    color: "bg-gray-100 text-gray-600"
+    color: "bg-blue-100 text-blue-600"
   },
   {
     icon: Cpu,
@@ -122,34 +121,34 @@ const services: Service[] = [
 ];
 
 const projects: Project[] = [
-    {
-      title: "Healthcare AI Platform",
-      category: "Healthcare",
-      description: "Revolutionizing patient care with predictive analytics and automated diagnostic assistance.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
-      results: ["40% faster diagnosis", "95% accuracy rate", "50% cost reduction"]
-    },
-    {
-      title: "Retail Optimization Suite",
-      category: "Retail",
-      description: "Advanced inventory management and customer behavior analysis for e-commerce platforms.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      results: ["30% inventory optimization", "25% sales increase", "60% better forecasting"]
-    },
-    {
-      title: "Financial Risk Assessment",
-      category: "Finance",
-      description: "Real-time fraud detection and risk analysis system for banking institutions.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      results: ["99.8% fraud detection", "80% faster processing", "70% risk reduction"]
-    },
-    {
-      title: "Manufacturing Automation",
-      category: "Manufacturing",
-      description: "Smart factory solutions with predictive maintenance and quality control systems.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      results: ["35% efficiency gain", "90% less downtime", "45% quality improvement"]
-    }
+  {
+    title: "Healthcare AI Platform",
+    category: "Healthcare",
+    description: "Revolutionizing patient care with predictive analytics and automated diagnostic assistance.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+    results: ["40% faster diagnosis", "95% accuracy rate", "50% cost reduction"]
+  },
+  {
+    title: "Retail Optimization Suite",
+    category: "Retail",
+    description: "Advanced inventory management and customer behavior analysis for e-commerce platforms.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    results: ["30% inventory optimization", "25% sales increase", "60% better forecasting"]
+  },
+  {
+    title: "Financial Risk Assessment",
+    category: "Finance",
+    description: "Real-time fraud detection and risk analysis system for banking institutions.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    results: ["99.8% fraud detection", "80% faster processing", "70% risk reduction"]
+  },
+  {
+    title: "Manufacturing Automation",
+    category: "Manufacturing",
+    description: "Smart factory solutions with predictive maintenance and quality control systems.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+    results: ["35% efficiency gain", "90% less downtime", "45% quality improvement"]
+  }
 ];
 
 const aboutData: AboutData = {
@@ -181,7 +180,8 @@ const aboutData: AboutData = {
   ]
 };
 
-const simulateFetch = (data: any, delay = 50) => new Promise(resolve => setTimeout(() => resolve(data), delay));
+const simulateFetch = <T>(data: T, delay = 30): Promise<T> => 
+  new Promise(resolve => setTimeout(() => resolve(data), delay));
 
 export const fetchFeatures = (): Promise<Feature[]> => simulateFetch(features);
 export const fetchServices = (): Promise<Service[]> => simulateFetch(services);
