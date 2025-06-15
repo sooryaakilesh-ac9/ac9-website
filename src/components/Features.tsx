@@ -1,45 +1,13 @@
 
-import { Brain, Zap, Shield, BarChart3, Cloud, Cpu } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { fetchFeatures } from '@/api/mock';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Features = () => {
-  const features = [
-    {
-      icon: Brain,
-      title: "Advanced AI Models",
-      description: "Cutting-edge machine learning algorithms that evolve with your business needs.",
-      color: "bg-yellow-100 text-yellow-600"
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Process data and generate insights at unprecedented speeds with optimized performance.",
-      color: "bg-orange-100 text-orange-600"
-    },
-    {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level security protocols to keep your sensitive data protected at all times.",
-      color: "bg-green-100 text-green-600"
-    },
-    {
-      icon: BarChart3,
-      title: "Real-time Analytics",
-      description: "Make informed decisions with comprehensive analytics and predictive insights.",
-      color: "bg-purple-100 text-purple-600"
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Native",
-      description: "Scalable cloud infrastructure that grows with your business requirements.",
-      color: "bg-gray-100 text-gray-600"
-    },
-    {
-      icon: Cpu,
-      title: "Smart Automation",
-      description: "Automate complex workflows and reduce manual tasks with intelligent systems.",
-      color: "bg-amber-100 text-amber-600"
-    }
-  ];
+  const { data: features, isLoading } = useQuery({
+    queryKey: ['features'],
+    queryFn: fetchFeatures,
+  });
 
   return (
     <section id="features" className="py-24 bg-gradient-to-br from-white to-yellow-50/30">
@@ -55,24 +23,35 @@ const Features = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-white/60 backdrop-blur-sm p-8 border border-white/40 rounded-2xl hover:bg-white/80 hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
-            >
-              <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200`}>
-                <feature.icon className="w-8 h-8" />
+          {isLoading ? (
+            Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="p-8 space-y-4">
+                <Skeleton className="h-16 w-16 rounded-xl" />
+                <Skeleton className="h-6 w-3/4" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-5/6" />
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-200">
-                {feature.title}
-              </h3>
-              
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            ))
+          ) : (
+            features.map((feature, index) => (
+              <div
+                key={index}
+                className="group bg-white/30 backdrop-blur-lg p-8 border border-white/20 shadow-lg rounded-2xl hover:bg-white/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1"
+              >
+                <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-150`}>
+                  <feature.icon className="w-8 h-8" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-yellow-600 transition-colors duration-150">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </section>
