@@ -12,25 +12,13 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-8">
-            Take Your Business
-            <span className="block text-yellow-500">Above Cloud 9</span>
+            Creating A Happier World
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Revolutionize your operations with cutting-edge AI technology. 
-            We help businesses soar beyond limitations with intelligent automation and insights.
+            AboveCloud9.AI is an innovative IT start-up founded by tech luminaries from Silicon Valley giants. 
+            We aim to positively impact lives through advanced AI tools and cutting-edge technology.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-150 hover:scale-105 flex items-center">
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-150" />
-            </button>
-            
-            <button className="border-2 border-gray-400/50 hover:border-yellow-500 bg-white/30 text-gray-700 hover:text-yellow-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-150 hover:scale-105">
-              Watch Demo
-            </button>
-          </div>
           
           <div className="mt-20">
             <div className="relative">
