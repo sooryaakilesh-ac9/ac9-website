@@ -127,16 +127,16 @@ const aboutData: AboutData = {
   ],
   leadership: [
     {
-      name: "John Smith",
+      name: "Amit Singh",
       role: "Chairman",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "Visionary leader with 20+ years in technology and business transformation."
+      bio: "Visionary leader with 20+ years in technology and business transformation. Former executive at Google, Oracle, and Palo Alto Networks."
     },
     {
-      name: "Sarah Johnson",
-      role: "CEO",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      bio: "AI expert and strategic innovator driving our mission to transform businesses."
+      name: "Sudhagar Chinnasamy",
+      role: "Founder",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      bio: "AI expert and strategic innovator driving our mission to transform businesses. Former technical lead at Meta, WhatsApp, and Ericsson."
     }
   ]
 };

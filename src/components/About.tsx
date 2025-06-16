@@ -2,7 +2,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchAboutData } from '@/api/mock';
 import { Skeleton } from '@/components/ui/skeleton';
-import { CheckCircle, Target, Eye } from 'lucide-react';
+import { CheckCircle, Target, Eye, Users, Heart } from 'lucide-react';
 
 const About = () => {
   const { data, isLoading } = useQuery({
@@ -18,140 +18,151 @@ const About = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Mission and Vision */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About <span className="text-yellow-500">aboveCloud9.ai</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-            We're pioneering the future of business intelligence through artificial intelligence, 
-            helping organizations transcend traditional limitations and achieve unprecedented growth.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white/50 backdrop-blur-md p-6 shadow-lg border border-white/30 rounded-xl transition-all duration-200 hover:bg-white/70 hover:scale-[1.02]">
-              <div className="w-12 h-12 bg-yellow-100/80 mx-auto mb-4 rounded-lg flex items-center justify-center border border-yellow-200/50 shadow-sm">
-                <Target className="w-6 h-6 text-yellow-600" />
+        {/* Creating A Happier World Hero */}
+        <div className="text-center mb-20">
+          <div className="relative">
+            <div className="bg-gradient-to-r from-gray-800 to-gray-600 text-white py-20 px-8 rounded-3xl mb-16 relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="relative z-10">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  Creating A Happier World
+                </h1>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
+                  AboveCloud9.AI is an innovative IT start-up founded by tech luminaries from 
+                  Silicon Valley giants. We aim to positively impact lives through advanced AI tools 
+                  and cutting-edge technology.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                To democratize AI technology and make it accessible for businesses of all sizes, 
-                enabling them to compete in the digital economy with intelligent automation and insights.
-              </p>
-            </div>
-
-            <div className="bg-white/50 backdrop-blur-md p-6 shadow-lg border border-white/30 rounded-xl transition-all duration-200 hover:bg-white/70 hover:scale-[1.02]">
-              <div className="w-12 h-12 bg-yellow-100/80 mx-auto mb-4 rounded-lg flex items-center justify-center border border-yellow-200/50 shadow-sm">
-                <Eye className="w-6 h-6 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                A world where every business, regardless of size or industry, can harness the power of AI 
-                to innovate, grow, and create meaningful impact in their communities.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Why Choose Us */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose Us
-            </h3>
-            
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We combine cutting-edge technology with deep industry expertise to deliver 
-              solutions that drive real business results.
-            </p>
+        {/* Welcome Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-yellow-100/60 border border-yellow-200/40 text-yellow-800 text-sm font-medium mb-6 rounded-full">
+            <Heart className="w-4 h-4 mr-2" />
+            WELCOME TO ABOVECLOUD9.AI
+          </div>
+        </div>
 
-            <div className="space-y-3 mb-8">
-              {isLoading ? (
-                Array.from({ length: 4 }).map((_, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <Skeleton className="w-5 h-5 rounded-full" />
-                    <Skeleton className="h-5 w-full" />
-                  </div>
-                ))
-              ) : (
-                benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">{benefit}</span>
-                  </div>
-                ))
-              )}
+        {/* Our Mission and Who We Are */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+          <div className="bg-white/50 backdrop-blur-md p-8 shadow-lg border border-white/30 rounded-xl">
+            <div className="flex items-center mb-6">
+              <div className="w-20 h-20 rounded-full overflow-hidden mr-4 shadow-lg">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
+                  alt="Mission representative"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Our Mission
+                </h2>
+              </div>
             </div>
-
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg">
-              Learn More About Us
-            </button>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Our mission is to positively impact people's lives, helping them live more 
+              happily, improve their overall well-being, and build a happy and stress-free 
+              lifestyle. We believe that by combining advanced AI technology with cutting-edge 
+              technology to create solutions that make a real difference in people's 
+              daily lives.
+            </p>
           </div>
 
-          <div>
-            <div className="grid grid-cols-2 gap-4">
-              {isLoading ? (
-                Array.from({ length: 4 }).map((_, index) => (
-                  <div key={index} className="p-4 text-center space-y-2">
-                    <Skeleton className="h-6 w-1/2 mx-auto" />
-                    <Skeleton className="h-4 w-3/4 mx-auto" />
-                  </div>
-                ))
-              ) : (
-                stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white/50 backdrop-blur-md p-4 shadow-lg border border-white/30 rounded-xl text-center hover:shadow-xl hover:scale-105 transition-all duration-200"
-                  >
-                    <div className="text-2xl font-bold text-yellow-500 mb-1">
-                      {stat.number}
-                    </div>
-                    <div className="text-gray-600 font-medium text-xs">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))
-              )}
+          <div className="bg-white/50 backdrop-blur-md p-8 shadow-lg border border-white/30 rounded-xl">
+            <div className="flex items-center mb-6">
+              <div className="w-20 h-20 rounded-full overflow-hidden mr-4 shadow-lg">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&crop=face"
+                  alt="Team representative"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Who We Are
+                </h2>
+              </div>
             </div>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              We're an early-stage software company with a mission to positively 
+              impact people's lives. Founded by tech luminaries from Silicon Valley 
+              giants like Google, Meta, Palo Alto Networks, Oracle, WhatsApp, we're 
+              backed by industry veterans from Apple, Amazon, Ericsson, Siemens, and 
+              other tech powerhouses.
+            </p>
           </div>
         </div>
 
         {/* Leadership Section */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Meet Our <span className="text-yellow-500">Leadership</span>
+        <div className="mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-yellow-100/60 border border-yellow-200/40 text-yellow-800 text-sm font-medium mb-6 rounded-full">
+            <Users className="w-4 h-4 mr-2" />
+            OUR TEAM
+          </div>
+          
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+            Meet Our Team
           </h3>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our experienced leaders drive innovation and guide our mission to transform businesses with AI.
-          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {isLoading ? (
+              Array.from({ length: 2 }).map((_, index) => (
+                <div key={index} className="p-6 text-center space-y-3">
+                  <Skeleton className="w-32 h-32 rounded-full mx-auto" />
+                  <Skeleton className="h-5 w-1/2 mx-auto" />
+                  <Skeleton className="h-4 w-1/3 mx-auto" />
+                  <Skeleton className="h-4 w-full" />
+                </div>
+              ))
+            ) : (
+              leadership.map((leader, index) => (
+                <div
+                  key={index}
+                  className="bg-white/50 backdrop-blur-md p-8 shadow-lg border border-white/30 rounded-xl text-center hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+                >
+                  <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-lg">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
+                  <p className="text-yellow-500 font-semibold mb-4">{leader.role}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm mb-4">{leader.bio}</p>
+                  <div className="text-xs text-gray-500">
+                    <p>Ex: Google, Oracle, Palo Alto Networks</p>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
         </div>
 
-        <div className="max-w-2xl mx-auto space-y-6">
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {isLoading ? (
-            Array.from({ length: 2 }).map((_, index) => (
-              <div key={index} className="p-6 text-center space-y-3">
-                <Skeleton className="w-20 h-20 rounded-xl mx-auto" />
-                <Skeleton className="h-5 w-1/3 mx-auto" />
-                <Skeleton className="h-4 w-1/4 mx-auto" />
-                <Skeleton className="h-4 w-full" />
+            Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="p-4 text-center space-y-2">
+                <Skeleton className="h-6 w-1/2 mx-auto" />
+                <Skeleton className="h-4 w-3/4 mx-auto" />
               </div>
             ))
           ) : (
-            leadership.map((leader, index) => (
+            stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-white/50 backdrop-blur-md p-6 shadow-lg border border-white/30 rounded-xl text-center hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+                className="bg-white/50 backdrop-blur-md p-6 shadow-lg border border-white/30 rounded-xl text-center hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
-                <div className="w-20 h-20 mx-auto mb-4 overflow-hidden rounded-xl shadow-lg">
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
+                <div className="text-3xl font-bold text-yellow-500 mb-2">
+                  {stat.number}
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
-                <p className="text-yellow-500 font-semibold mb-3">{leader.role}</p>
-                <p className="text-gray-600 leading-relaxed text-sm">{leader.bio}</p>
+                <div className="text-gray-600 font-medium text-sm">
+                  {stat.label}
+                </div>
               </div>
             ))
           )}
