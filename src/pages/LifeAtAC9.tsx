@@ -158,7 +158,7 @@ const LifeAtAC9 = () => {
     },
     {
       month: "April 2025",
-      win: "Scaled fintech client's ops by 30%"
+      win: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
     },
     {
       month: "March 2025",
@@ -260,7 +260,7 @@ const LifeAtAC9 = () => {
               🧬 PRODUCT DNA
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Core Principles
+              Core <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Principles</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These principles guide every product decision we make.
@@ -284,7 +284,7 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* Product Lab Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 relative overflow-hidden">
+      {/* <section className="py-20 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-100 to-purple-200 border-2 border-purple-300 text-purple-800 text-lg font-bold rounded-full shadow-medium mb-8">
@@ -318,10 +318,10 @@ const LifeAtAC9 = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Impact Wall - Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden">
+      {/* <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 border-2 border-green-300 text-green-800 text-lg font-bold rounded-full shadow-medium mb-8">
@@ -352,10 +352,10 @@ const LifeAtAC9 = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Who We Work With */}
-      <section className="py-20 bg-gradient-to-br from-white via-gray-50/20 to-white relative overflow-hidden">
+      {/* <section className="py-20 bg-gradient-to-br from-white via-gray-50/20 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-100 to-orange-200 border-2 border-orange-300 text-orange-800 text-lg font-bold rounded-full shadow-medium mb-8">
@@ -363,7 +363,7 @@ const LifeAtAC9 = () => {
               🎯 WHO WE WORK WITH
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Personas &gt; Logos
+              Personas {`>`} Logos
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We work with people, not just companies.
@@ -395,7 +395,7 @@ const LifeAtAC9 = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Wall of Wins */}
       <section className="py-20 bg-gradient-to-br from-green-50/50 via-white to-green-100/30 relative overflow-hidden">
@@ -406,7 +406,7 @@ const LifeAtAC9 = () => {
               🧩 AC9 WALL OF WINS
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Recent Highlights
+              Recent <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Highlights</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Building trust through transparency.
@@ -436,7 +436,7 @@ const LifeAtAC9 = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Our Culture Cards
+              Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Culture</span> Cards
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These aren't just values on a wall—they're the principles that guide every decision we make.
@@ -449,8 +449,8 @@ const LifeAtAC9 = () => {
                 key={index}
                 className="group relative"
                 intensity={0.8}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
+                // onMouseEnter={() => setHoveredCard(index)}
+                // onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-300 h-full relative overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
@@ -479,7 +479,7 @@ const LifeAtAC9 = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Perks & Benefits
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Perks</span> & Benefits
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We believe in taking care of our team so they can do their best work.
@@ -566,7 +566,7 @@ const LifeAtAC9 = () => {
                       : 'bg-white/80 border-gray-200 hover:border-yellow-300 hover:shadow-medium'
                   }`}
                   intensity={0.7}
-                  onClick={() => setContactType(option.id)}
+                  // onClick={() => setContactType(option.id)}
                 >
                   <div className="flex items-center space-x-4">
                     <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
@@ -594,7 +594,7 @@ const LifeAtAC9 = () => {
             <div className="text-center">
               <InteractiveCard intensity={1.0}>
                 <a
-                  href={`mailto:hello@abovecloud9.ai?subject=${
+                  href={`mailto:careers@abovecloud9.ai?subject=${
                     contactType === 'automate' ? 'Automation Inquiry' :
                     contactType === 'partnership' ? 'Partnership Discussion' :
                     contactType === 'work' ? 'Career Opportunity' :
@@ -640,7 +640,7 @@ const LifeAtAC9 = () => {
             
             <InteractiveCard intensity={0.8}>
               <a
-                href="mailto:careers@abovecloud9.ai?subject=General Application"
+                href="mailto:careers@AboveCloud9.ai?subject=General Application"
                 className="inline-block bg-white hover:bg-gray-50 text-gray-800 border-2 border-yellow-500 hover:border-yellow-600 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 shadow-strong"
               >
                 Get in Touch

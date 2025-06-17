@@ -32,9 +32,9 @@ const Contact = () => {
             
             <div className="space-y-6 mb-10">
               {[
-                { icon: Mail, label: 'Email', value: 'hello@abovecloud9.ai' },
+                { icon: Mail, label: 'Email', value: 'careers@abovecloud9.ai' },
                 { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
-                { icon: MapPin, label: 'Location', value: 'San Francisco, CA' }
+                { icon: MapPin, label: 'Location', value: `1166/2A1, Kurumbapalayam Road, Kalapatti, Coimbatore South, Coimbatore- 641048, Tamil Nadu` }
               ].map((item, index) => (
                 <InteractiveCard key={index} darkMode={true} intensity={0.6}>
                   <div className="flex items-center space-x-4 group">

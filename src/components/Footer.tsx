@@ -14,14 +14,14 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
             <InteractiveCard darkMode={true} intensity={0.5}>
               <div className="flex items-center space-x-2 mb-6 group">
                 <div className="w-10 h-10 bg-yellow-400/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-100">
                   <Cloud className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-2xl font-bold">aboveCloud9.ai</span>
+                <span className="text-2xl font-bold">AboveCloud9.ai</span>
               </div>
             </InteractiveCard>
             
@@ -54,25 +54,12 @@ const Footer = () => {
               ))}
             </ul>
           </InteractiveCard>
-          
-          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
-            <h3 className="text-lg font-semibold mb-6 text-yellow-400">Support</h3>
-            <ul className="space-y-3">
-              {['Help Center', 'Documentation', 'API Reference', 'Contact'].map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
-                    <span className="group-hover:scale-105 transition-transform duration-100 inline-block">{item}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </InteractiveCard>
         </div>
         
         <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 mb-4 md:mb-0">
-              © 2024 aboveCloud9.ai. All rights reserved.
+              © 2024 AboveCloud9.ai. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, index) => (

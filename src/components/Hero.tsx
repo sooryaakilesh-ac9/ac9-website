@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Star, Zap } from 'lucide-react';
+import { ArrowRight, Link, Sparkles, Star, Zap } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -47,21 +47,21 @@ const Hero = () => {
           
           <div className="mb-12 max-w-4xl mx-auto animate-fade-in-fast animation-delay-200">
             <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed">
-              AboveCloud9.AI is an innovative IT start-up founded by tech luminaries from Silicon Valley giants. 
+              AboveCloud9.ai is an innovative IT start-up founded by tech luminaries from Silicon Valley giants. 
               We aim to positively impact lives through <span className="text-yellow-600 font-bold">advanced AI tools</span> and cutting-edge technology.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-fast animation-delay-300">
-            <button className="group bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden">
+            <button onClick={() => window.location.href = '/careers'} className="group bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden">
               <span className="relative z-10 flex items-center justify-center">
-                Get Started
+                Careers
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-100" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
             </button>
             
-            <button className="group bg-white/90 hover:bg-white text-gray-800 px-12 py-5 rounded-2xl font-bold text-xl border-3 border-yellow-300 hover:border-yellow-500 transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden backdrop-blur-sm">
+            <button onClick={() => window.location.href = '/life-at-ac9'} className="group bg-white/90 hover:bg-white text-gray-800 px-12 py-5 rounded-2xl font-bold text-xl border-3 border-yellow-300 hover:border-yellow-500 transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden backdrop-blur-sm">
               <span className="relative z-10">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-50 to-yellow-100 opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
             </button>

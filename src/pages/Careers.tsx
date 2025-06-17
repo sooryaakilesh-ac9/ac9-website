@@ -20,7 +20,7 @@ const Careers = () => {
         "Eye for detail + design sensibility",
         "Bonus: Familiar with AI dashboarding or data viz"
       ],
-      email: "careers@abovecloud9.ai",
+      email: "careers@AboveCloud9.ai",
       subject: "Frontend FTW"
     },
     {
@@ -38,7 +38,7 @@ const Careers = () => {
         "Python, Transformers, vector DBs",
         "Fast learners who love solving unsolved problems"
       ],
-      email: "careers@abovecloud9.ai",
+      email: "careers@AboveCloud9.ai",
       subject: "AI Wizard"
     },
     {
@@ -56,7 +56,7 @@ const Careers = () => {
         "Knowledge of secure, scalable mobile architecture",
         "Bonus: Apps live on the Play Store/App Store"
       ],
-      email: "careers@abovecloud9.ai",
+      email: "careers@AboveCloud9.ai",
       subject: "Mobile Magic"
     },
     {
@@ -74,7 +74,7 @@ const Careers = () => {
         "Strong people skills and creative thinking",
         "Comfortable with tech hiring and startup energy"
       ],
-      email: "careers@abovecloud9.ai",
+      email: "careers@AboveCloud9.ai",
       subject: "HR Hustler"
     }
   ];
@@ -91,8 +91,8 @@ const Careers = () => {
               <Briefcase className="w-4 h-4 mr-2" />
               OPEN ROLES
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Join Our Mission
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
+              Join Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Mission</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Help us create AI solutions that make a real difference in people's lives. Work with industry veterans from top tech companies.
@@ -194,7 +194,7 @@ const Careers = () => {
               If you think you'd be a great fit, drop us a line anyway →
             </p>
             <a 
-              href="mailto:careers@abovecloud9.ai?subject=General Application"
+              href="mailto:careers@AboveCloud9.ai?subject=General Application"
               className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
             >
               Send Us Your Resume
