@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, User, ArrowRight, Tag, Plus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
@@ -79,10 +80,19 @@ const Blog = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Our Blog
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Insights, trends, and thought leadership from the world of AI and technology. 
               Stay updated with the latest developments in artificial intelligence.
             </p>
+            
+            {/* Create Blog Button */}
+            <Link 
+              to="/create-blog"
+              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+              <Plus className="w-5 h-5 mr-2" />
+              Create New Post
+            </Link>
           </div>
         </div>
       </section>

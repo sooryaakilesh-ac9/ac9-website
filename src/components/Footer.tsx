@@ -1,5 +1,5 @@
-
 import { Cloud, Twitter, Linkedin, Github } from 'lucide-react';
+import InteractiveCard from './InteractiveCard';
 
 const Footer = () => {
   return (
@@ -7,64 +7,82 @@ const Footer = () => {
       {/* Background overlay with transparency */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10"></div>
       
+      {/* Static background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute left-10 top-20 w-32 h-32 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full blur-2xl animate-pulse-slow"></div>
+        <div className="absolute right-15 bottom-25 w-24 h-24 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-2xl animate-pulse-slow animation-delay-1000"></div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-yellow-400/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
-                <Cloud className="w-6 h-6 text-white" />
+            <InteractiveCard darkMode={true} intensity={0.5}>
+              <div className="flex items-center space-x-2 mb-6 group">
+                <div className="w-10 h-10 bg-yellow-400/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-100">
+                  <Cloud className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-2xl font-bold">aboveCloud9.ai</span>
               </div>
-              <span className="text-2xl font-bold">aboveCloud9.ai</span>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              Empowering businesses to reach new heights with cutting-edge AI technology and innovative solutions.
-            </p>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-yellow-400/90 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-yellow-400/90 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-yellow-400/90 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
-                <Github className="w-5 h-5" />
-              </a>
+            </InteractiveCard>
+            
+            <InteractiveCard darkMode={true} intensity={0.3}>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-md mb-6">
+                Empowering businesses to reach new heights with cutting-edge AI technology and innovative solutions.
+              </p>
+            </InteractiveCard>
+            
+            <div className="flex space-x-4">
+              {[Twitter, Linkedin, Github].map((Icon, index) => (
+                <InteractiveCard key={index} darkMode={true} intensity={0.8}>
+                  <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-yellow-400/90 rounded-lg flex items-center justify-center transition-all duration-150 hover:scale-110 hover:shadow-lg group">
+                    <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-100" />
+                  </a>
+                </InteractiveCard>
+              ))}
             </div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
+          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
             <h3 className="text-lg font-semibold mb-6 text-yellow-400">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">About</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">Careers</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">News</a></li>
+              {['About', 'Careers', 'Blog', 'News'].map((item, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
+                    <span className="group-hover:scale-105 transition-transform duration-100 inline-block">{item}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
-          </div>
+          </InteractiveCard>
           
-          <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
+          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
             <h3 className="text-lg font-semibold mb-6 text-yellow-400">Support</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">Help Center</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">Documentation</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">API Reference</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 hover:translate-x-2 inline-block">Contact</a></li>
+              {['Help Center', 'Documentation', 'API Reference', 'Contact'].map((item, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
+                    <span className="group-hover:scale-105 transition-transform duration-100 inline-block">{item}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
-          </div>
+          </InteractiveCard>
         </div>
         
-        <div className="border-t border-white/20 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
+        <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 mb-4 md:mb-0">
               © 2024 aboveCloud9.ai. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-200 hover:scale-105">Privacy Policy</a>
-              <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-200 hover:scale-105">Terms of Service</a>
-              <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-200 hover:scale-105">Cookie Policy</a>
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, index) => (
+                <a key={index} href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:scale-105 group">
+                  <span className="group-hover:underline">{item}</span>
+                </a>
+              ))}
             </div>
           </div>
-        </div>
+        </InteractiveCard>
       </div>
     </footer>
   );

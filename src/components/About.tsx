@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchAboutData } from '@/api/mock';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Users, Heart } from 'lucide-react';
+import { Users, Heart, Target, Star, Rocket, Zap, Brain, Shield, BarChart3, Cloud, Settings } from 'lucide-react';
+import InteractiveCard from './InteractiveCard';
 
 const About = () => {
   const { data, isLoading } = useQuery({
@@ -11,97 +12,195 @@ const About = () => {
 
   const { leadership = [] } = data || {};
 
+  const whyAC9Points = [
+    {
+      icon: Rocket,
+      title: "Real ownership from Day 1",
+      description: "Take charge of meaningful projects from your first day"
+    },
+    {
+      icon: Brain,
+      title: "Build products that go live—not just docs",
+      description: "Ship real features that users actually use"
+    },
+    {
+      icon: Cloud,
+      title: "Global minds, Coimbatore heart",
+      description: "International expertise with local values"
+    },
+    {
+      icon: Zap,
+      title: "Zero red tape. Only real growth.",
+      description: "Fast decisions, faster execution, fastest growth"
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50/80 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tr from-yellow-50/30 via-transparent to-blue-50/20"></div>
+    <section id="about" className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100/20 via-transparent to-yellow-200/10"></div>
+      
+      {/* Static background elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 right-20 w-48 h-48 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-yellow-500/25 to-yellow-600/25 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Welcome Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-yellow-100/60 border border-yellow-200/40 text-yellow-800 text-sm font-medium mb-6 rounded-full">
-            <Heart className="w-4 h-4 mr-2" />
-            ABOUT US
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Mission & Vision
-          </h2>
+        <div className="text-center mb-16 animate-fade-in-fast">
+          <InteractiveCard className="inline-block mb-8" intensity={0.6}>
+            <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-200 to-yellow-300 border-2 border-yellow-400 text-yellow-900 text-lg font-bold rounded-full shadow-medium hover:shadow-yellow-lg transition-all duration-100">
+              <Zap className="w-6 h-6 mr-3 animate-sparkle-fast text-yellow-700" />
+              WELCOME TO ABOVECLOUD9 AI
+            </div>
+          </InteractiveCard>
+          
+          <InteractiveCard intensity={0.4}>
+            <h2 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
+              <Star className="inline w-12 h-12 text-yellow-500 mr-4 animate-float-fast" />
+              Tech that <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Thinks</span>. 
+              People that <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Build</span>. 
+              Impact that <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Lasts</span>.
+            </h2>
+          </InteractiveCard>
         </div>
 
-        {/* Main Content Grid - Mission/Vision on Left, Founders on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20 animate-fade-in-fast animation-delay-200">
           
           {/* Left Side - Mission and Who We Are */}
-          <div className="space-y-8">
-            <div className="bg-white/50 backdrop-blur-md p-8 shadow-lg border border-white/30 rounded-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                Our Mission
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our mission is to positively impact people's lives, helping them live more 
-                happily, improve their overall well-being, and build a happy and stress-free 
-                lifestyle. We believe in combining advanced AI technology with cutting-edge 
-                solutions to create meaningful differences in people's daily lives.
+          <div className="space-y-10">
+            <InteractiveCard className="bg-gradient-to-br from-white/80 to-yellow-50/80 backdrop-blur-xl p-10 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast" intensity={0.6}>
+              <div className="flex items-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mr-4 shadow-yellow">
+                  <Target className="w-8 h-8 text-white animate-sparkle-fast" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-black text-gray-900">
+                  OUR MISSION
+                </h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                To make life simpler, happier, and stress-free—one smart solution at a time. We're building 
+                AI that puts humans first and delivers impact where it matters most: real life.
               </p>
-            </div>
+            </InteractiveCard>
 
-            <div className="bg-white/50 backdrop-blur-md p-8 shadow-lg border border-white/30 rounded-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                Who We Are
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                We're an early-stage software company founded by tech luminaries from Silicon Valley 
-                giants like Google, Meta, Palo Alto Networks, Oracle, and WhatsApp. We're backed by 
-                industry veterans from Apple, Amazon, Ericsson, Siemens, and other tech powerhouses.
+            <InteractiveCard className="bg-gradient-to-br from-white/80 to-yellow-50/80 backdrop-blur-xl p-10 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast" intensity={0.6}>
+              <div className="flex items-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mr-4 shadow-yellow">
+                  <Star className="w-8 h-8 text-white animate-float-fast" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-black text-gray-900">
+                  WHO WE ARE
+                </h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                We're a fast-moving AI product company founded by engineers from WhatsApp, Meta, 
+                Google, Oracle, and Palo Alto Networks. Backed by global tech veterans, we combine deep 
+                expertise with startup velocity to create AI tools that make life better — for businesses and 
+                people.
               </p>
-            </div>
+            </InteractiveCard>
           </div>
 
           {/* Right Side - Leadership Section */}
           <div>
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-100/60 border border-yellow-200/40 text-yellow-800 text-sm font-medium mb-6 rounded-full">
-              <Users className="w-4 h-4 mr-2" />
-              LEADERSHIP
-            </div>
+            <InteractiveCard className="inline-block mb-8" intensity={0.5}>
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-200 to-yellow-300 border-2 border-yellow-400 text-yellow-900 text-lg font-bold rounded-full shadow-soft">
+                <Users className="w-5 h-5 mr-2 animate-sparkle-fast" />
+                LEADERSHIP
+              </div>
+            </InteractiveCard>
             
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-10">
               Meet Our Founders
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-12">
               {isLoading ? (
                 Array.from({ length: 2 }).map((_, index) => (
-                  <div key={index} className="p-6 space-y-3">
-                    <Skeleton className="w-24 h-24 rounded-full" />
-                    <Skeleton className="h-5 w-1/2" />
-                    <Skeleton className="h-4 w-1/3" />
-                    <Skeleton className="h-4 w-full" />
+                  <div key={index} className="p-8 space-y-4">
+                    <Skeleton className="w-32 h-32 rounded-full" />
+                    <Skeleton className="h-6 w-1/2" />
+                    <Skeleton className="h-5 w-1/3" />
+                    <Skeleton className="h-5 w-full" />
                   </div>
                 ))
               ) : (
                 leadership.map((leader, index) => (
-                  <div
+                  <InteractiveCard
                     key={index}
-                    className="bg-white/50 backdrop-blur-md p-6 shadow-lg border border-white/30 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-200 flex items-start space-x-6"
+                    className="bg-gradient-to-br from-white/80 to-yellow-50/80 backdrop-blur-xl p-8 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast relative"
+                    intensity={0.7}
                   >
-                    <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-full shadow-lg">
+                    {/* Floating image with text wrapping */}
+                    <div className={`w-40 h-40 flex-shrink-0 overflow-hidden rounded-2xl shadow-yellow group border-4 border-yellow-300 mb-4 ${
+                      index % 2 === 0 ? 'float-left mr-6' : 'float-right ml-6'
+                    }`}>
                       <img
                         src={leader.image}
                         alt={leader.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-100"
                       />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h4>
-                      <p className="text-yellow-500 font-semibold mb-3">{leader.role}</p>
-                      <p className="text-gray-600 leading-relaxed text-sm">{leader.bio}</p>
+                    
+                    {/* Content that wraps around the image */}
+                    <div className="text-content">
+                      <h4 className="text-2xl font-black text-gray-900 mb-2">{leader.name}</h4>
+                      <p className="text-yellow-600 font-bold text-lg mb-4">{leader.role}</p>
+                      <p className="text-gray-700 leading-relaxed font-medium text-justify">
+                        {leader.bio}
+                      </p>
                     </div>
-                  </div>
+                    
+                    {/* Clear float to prevent layout issues */}
+                    <div className="clear-both"></div>
+                  </InteractiveCard>
                 ))
               )}
             </div>
           </div>
         </div>
+
+        {/* Why AC9 Section */}
+        <InteractiveCard 
+          className="bg-gradient-to-br from-yellow-100/60 to-yellow-200/40 backdrop-blur-xl p-12 shadow-strong border-2 border-yellow-300/50 rounded-3xl animate-fade-in-fast animation-delay-400" 
+          intensity={0.5}
+        >
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl flex items-center justify-center mr-4 shadow-yellow-lg">
+                <Zap className="w-10 h-10 text-white animate-sparkle-fast" />
+              </div>
+              <h3 className="text-4xl md:text-6xl font-black text-gray-900">
+                Why AC9?
+              </h3>
+            </div>
+            <div className="max-w-3xl mx-auto mb-10">
+              <p className="text-3xl text-gray-800 font-black mb-6">We don't do boring.</p>
+              <p className="text-2xl text-gray-700 font-bold">At AC9, you won't be a cog—you'll be the engine.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whyAC9Points.map((point, index) => (
+              <InteractiveCard
+                key={index}
+                className="bg-gradient-to-br from-white/80 to-yellow-50/80 backdrop-blur-xl p-8 border-2 border-yellow-200/50 shadow-medium rounded-2xl flex items-start space-x-6 card-hover-fast"
+                intensity={0.8}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center flex-shrink-0 group shadow-yellow">
+                  <point.icon className="w-8 h-8 text-white group-hover:scale-105 transition-transform duration-100" />
+                </div>
+                <div>
+                  <h5 className="text-xl font-black text-gray-900 mb-3">{point.title}</h5>
+                  <p className="text-gray-700 leading-relaxed font-medium">{point.description}</p>
+                </div>
+              </InteractiveCard>
+            ))}
+          </div>
+        </InteractiveCard>
       </div>
     </section>
   );

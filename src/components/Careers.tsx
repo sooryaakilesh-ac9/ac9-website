@@ -1,86 +1,10 @@
-import { Briefcase, MapPin, Clock, DollarSign } from 'lucide-react';
+import React from 'react';
+import { Briefcase, MapPin, Clock, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Careers = () => {
-  const positions = [
-    {
-      title: "Backend Technical Lead",
-      type: "Full-time",
-      location: "Remote",
-      
-      description: "Lead our backend development team and architect scalable AI-powered solutions.",
-      requirements: [
-        "5+ years of backend development experience",
-        "Experience with Python, Node.js, or Go",
-        "Cloud platforms (AWS, GCP, Azure)",
-        "Microservices architecture"
-      ]
-    },
-    {
-      title: "Mobile Lead",
-      type: "Full-time", 
-      location: "Remote",
-      
-      description: "Drive mobile strategy and lead development of our cross-platform mobile applications.",
-      requirements: [
-        "5+ years of mobile development experience",
-        "React Native or Flutter expertise",
-        "iOS and Android development",
-        "Team leadership experience"
-      ]
-    },
-    {
-      title: "QA Automation Lead",
-      type: "Full-time",
-      location: "Remote",
-      
-      description: "Build and maintain our automated testing infrastructure to ensure product quality.",
-      requirements: [
-        "4+ years of QA automation experience",
-        "Selenium, Cypress, or similar tools",
-        "CI/CD pipeline experience",
-        "Performance testing expertise"
-      ]
-    },
-    {
-      title: "AI/ML Engineer",
-      type: "Full-time",
-      location: "Remote",
-      
-      description: "Develop and deploy machine learning models that power our AI solutions.",
-      requirements: [
-        "3+ years of ML/AI experience",
-        "Python, TensorFlow, PyTorch",
-        "MLOps and model deployment",
-        "Statistical analysis and data science"
-      ]
-    },
-    {
-      title: "Frontend Developer",
-      type: "Full-time",
-      location: "Remote",
-      
-      description: "Create beautiful, responsive user interfaces for our AI-powered applications.",
-      requirements: [
-        "3+ years of frontend development",
-        "React, TypeScript, modern CSS",
-        "UI/UX design principles",
-        "Performance optimization"
-      ]
-    },
-    {
-      title: "DevOps Engineer",
-      type: "Full-time",
-      location: "Remote",
-      
-      description: "Build and maintain our cloud infrastructure and deployment pipelines.",
-      requirements: [
-        "4+ years of DevOps experience",
-        "Kubernetes, Docker, Terraform",
-        "AWS/GCP/Azure expertise",
-        "Monitoring and observability"
-      ]
-    }
-  ];
+  const [currentAdvantage, setCurrentAdvantage] = useState(0);
 
   const advantages = [
     {
@@ -99,6 +23,14 @@ const Careers = () => {
       description: "Work on projects that directly contribute to people's happiness and wellbeing."
     }
   ];
+
+  const nextAdvantage = () => {
+    setCurrentAdvantage((prev) => (prev + 1) % advantages.length);
+  };
+
+  const prevAdvantage = () => {
+    setCurrentAdvantage((prev) => (prev - 1 + advantages.length) % advantages.length);
+  };
 
   return (
     <section id="careers" className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden">
@@ -119,88 +51,69 @@ const Careers = () => {
           </p>
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="mb-20">
+        {/* Advantages Carousel */}
+        <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 mb-2 text-center">
             Advantages of Working With Us
           </h3>
           <div className="w-16 h-1 bg-yellow-500 mx-auto mb-12"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="bg-white/50 backdrop-blur-md p-6 border border-white/30 shadow-lg rounded-xl text-center">
-                <div className="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <advantage.icon className="w-8 h-8" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-3">{advantage.title}</h4>
-                <p className="text-gray-600 text-sm">{advantage.description}</p>
+          <div className="relative max-w-2xl mx-auto">
+            <div className="bg-white/50 backdrop-blur-md p-8 border border-white/30 shadow-lg rounded-xl text-center min-h-[200px] flex flex-col justify-center">
+              <div className="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                {React.createElement(advantages[currentAdvantage].icon, { className: "w-8 h-8" })}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Open Positions */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Open Positions
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {positions.map((position, index) => (
-              <div
-                key={index}
-                className="group bg-white/50 backdrop-blur-md p-6 border border-white/30 shadow-lg rounded-xl hover:bg-white/70 hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
-              >
-                <h4 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors duration-200">
-                  {position.title}
-                </h4>
-                
-                <div className="space-y-2 mb-4 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <Clock className="w-4 h-4 mr-2" />
-                    {position.type}
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {position.location}
-                  </div>
-                  {/* <div className="flex items-center">
-                    <DollarSign className="w-4 h-4 mr-2" />
-                    {position.salary}
-                  </div> */}
-                </div>
-                
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {position.description}
-                </p>
-                
-                <div className="mb-6">
-                  <h5 className="font-semibold text-gray-900 mb-2 text-sm">Requirements:</h5>
-                  <ul className="space-y-1">
-                    {position.requirements.slice(0, 2).map((req, reqIndex) => (
-                      <li key={reqIndex} className="flex items-start text-xs text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
-                        {req}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg">
-                  Apply Now
-                </button>
-              </div>
-            ))}
+              <h4 className="text-xl font-bold text-gray-900 mb-3">{advantages[currentAdvantage].title}</h4>
+              <p className="text-gray-600">{advantages[currentAdvantage].description}</p>
+            </div>
+            
+            {/* Navigation buttons */}
+            <button
+              onClick={prevAdvantage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-600" />
+            </button>
+            <button
+              onClick={nextAdvantage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            </button>
+            
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {advantages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentAdvantage(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === currentAdvantage ? 'bg-yellow-500' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="text-center">
           <p className="text-gray-600 mb-6">
-            Don't see a position that fits? We're always looking for talented individuals.
+            Ready to join our team and make a difference?
           </p>
-          <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg">
-            Send Us Your Resume
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              to="/careers"
+              className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+              View Open Positions
+            </Link>
+            <Link 
+              to="/life-at-ac9"
+              className="inline-block bg-white hover:bg-gray-50 text-gray-800 border-2 border-yellow-500 hover:border-yellow-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+              Life at AC9
+            </Link>
+          </div>
         </div>
       </div>
     </section>
