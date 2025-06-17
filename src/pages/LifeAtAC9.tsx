@@ -363,7 +363,7 @@ const LifeAtAC9 = () => {
               🎯 WHO WE WORK WITH
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Personas > Logos
+              Personas &gt; Logos
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We work with people, not just companies.
