@@ -3,14 +3,14 @@ import InteractiveCard from './InteractiveCard';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm text-white py-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 dark:from-gray-950/90 dark:to-gray-900/90 backdrop-blur-sm text-white py-16 relative overflow-hidden">
       {/* Background overlay with transparency */}
-      <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:from-yellow-600/5 dark:to-orange-600/5"></div>
       
       {/* Static background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute left-10 top-20 w-32 h-32 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full blur-2xl animate-pulse-slow"></div>
-        <div className="absolute right-15 bottom-25 w-24 h-24 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-2xl animate-pulse-slow animation-delay-1000"></div>
+      <div className="absolute inset-0 opacity-10 dark:opacity-5">
+        <div className="absolute left-10 top-20 w-32 h-32 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 dark:from-yellow-500/20 dark:to-orange-500/20 rounded-full blur-2xl animate-pulse-slow"></div>
+        <div className="absolute right-15 bottom-25 w-24 h-24 bg-gradient-to-r from-blue-400/30 to-purple-400/30 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full blur-2xl animate-pulse-slow animation-delay-1000"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -26,7 +26,7 @@ const Footer = () => {
             </InteractiveCard>
             
             <InteractiveCard darkMode={true} intensity={0.3}>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-md mb-6">
+              <p className="text-gray-300 dark:text-gray-400 text-lg leading-relaxed max-w-md mb-6">
                 Empowering businesses to reach new heights with cutting-edge AI technology and innovative solutions.
               </p>
             </InteractiveCard>
@@ -42,12 +42,12 @@ const Footer = () => {
             </div>
           </div>
           
-          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
+          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 dark:border-gray-700/50">
             <h3 className="text-lg font-semibold mb-6 text-yellow-400">Company</h3>
             <ul className="space-y-3">
               {['About', 'Careers', 'Blog', 'News'].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
+                  <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
                     <span className="group-hover:scale-105 transition-transform duration-100 inline-block">{item}</span>
                   </a>
                 </li>
@@ -56,14 +56,14 @@ const Footer = () => {
           </InteractiveCard>
         </div>
         
-        <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
+        <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 dark:border-gray-700/50 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 mb-4 md:mb-0">
+            <p className="text-gray-300 dark:text-gray-400 mb-4 md:mb-0">
               © 2024 AboveCloud9.ai. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, index) => (
-                <a key={index} href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:scale-105 group">
+                <a key={index} href="#" className="text-gray-300 dark:text-gray-400 hover:text-yellow-400 transition-all duration-100 hover:scale-105 group">
                   <span className="group-hover:underline">{item}</span>
                 </a>
               ))}

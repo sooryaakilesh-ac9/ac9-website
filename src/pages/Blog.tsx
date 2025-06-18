@@ -70,20 +70,17 @@ const Blog = () => {
   const categories = ["All", "AI Trends", "Ethics", "Customer Experience", "Healthcare", "Automation", "Privacy"];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-white to-yellow-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-white to-yellow-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Our</span> Blog
-            </h1> */}
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
-              Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Blog</span>
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-gray-100 mb-8 leading-tight transition-colors duration-300">
+              Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">Blog</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 transition-colors duration-300">
               Insights, trends, and thought leadership from the world of AI and technology. 
               Stay updated with the latest developments in artificial intelligence.
             </p>
@@ -91,7 +88,7 @@ const Blog = () => {
             {/* Create Blog Button */}
             <Link 
               to="/create-blog"
-              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
+              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
             >
               <Plus className="w-5 h-5 mr-2" />
               Create New Post
@@ -101,7 +98,7 @@ const Blog = () => {
       </section>
 
       {/* Blog Content */}
-      <section className="py-16 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30">
+      <section className="py-16 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 dark:from-gray-800/50 dark:via-gray-900 dark:to-gray-800/30 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Category Filter */}
@@ -111,8 +108,8 @@ const Blog = () => {
                 key={index}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   index === 0 
-                    ? 'bg-yellow-500 text-white' 
-                    : 'bg-white/50 text-gray-600 hover:bg-yellow-100 hover:text-yellow-700'
+                    ? 'bg-yellow-500 dark:bg-yellow-600 text-white' 
+                    : 'bg-white/50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-300 hover:bg-yellow-100 dark:hover:bg-yellow-900/20 hover:text-yellow-700 dark:hover:text-yellow-400 border border-gray-200 dark:border-gray-700'
                 }`}
               >
                 {category}
@@ -122,7 +119,7 @@ const Blog = () => {
 
           {/* Featured Post */}
           <div className="mb-16">
-            <div className="bg-white/50 backdrop-blur-md border border-white/30 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-200">
+            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-md border border-white/30 dark:border-gray-700/30 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-200">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative h-64 lg:h-auto">
                   <img
@@ -131,13 +128,13 @@ const Blog = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-yellow-500 dark:bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                       Featured
                     </span>
                   </div>
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center">
                       <User className="w-4 h-4 mr-1" />
                       {blogPosts[0].author}
@@ -151,15 +148,15 @@ const Blog = () => {
                       {blogPosts[0].category}
                     </div>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
                     {blogPosts[0].title}
                   </h2>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300">
                     {blogPosts[0].excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{blogPosts[0].readTime}</span>
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">{blogPosts[0].readTime}</span>
+                    <button className="bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center">
                       Read More
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </button>
@@ -174,7 +171,7 @@ const Blog = () => {
             {blogPosts.slice(1).map((post) => (
               <article
                 key={post.id}
-                className="bg-white/50 backdrop-blur-md border border-white/30 shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-200 group"
+                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-md border border-white/30 dark:border-gray-700/30 shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-200 group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -183,14 +180,14 @@ const Blog = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-xs font-medium">
                       {post.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <div className="flex items-center space-x-4 text-xs text-gray-500 mb-3">
+                  <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400 mb-3">
                     <div className="flex items-center">
                       <User className="w-3 h-3 mr-1" />
                       {post.author}
@@ -201,17 +198,17 @@ const Blog = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-200">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors duration-200">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">{post.readTime}</span>
-                    <button className="text-yellow-500 hover:text-yellow-600 font-medium text-sm transition-colors duration-200 flex items-center">
+                    <span className="text-xs text-gray-500 dark:text-gray-400">{post.readTime}</span>
+                    <button className="text-yellow-500 dark:text-yellow-400 hover:text-yellow-600 dark:hover:text-yellow-300 font-medium text-sm transition-colors duration-200 flex items-center">
                       Read More
                       <ArrowRight className="w-3 h-3 ml-1" />
                     </button>
@@ -223,7 +220,7 @@ const Blog = () => {
 
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg">
+            <button className="bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg">
               Load More Posts
             </button>
           </div>
