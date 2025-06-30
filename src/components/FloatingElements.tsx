@@ -194,7 +194,7 @@ const FloatingElements = () => {
         return (
           <div
             key={index}
-            className="absolute opacity-20 will-change-transform"
+            className="absolute opacity-60 will-change-transform"
             style={{
               left: element.left,
               top: element.top,
@@ -216,7 +216,7 @@ const FloatingElements = () => {
       <div className="absolute inset-0">
         {/* Geometric shapes */}
         <div
-          className="absolute w-3 h-3 bg-yellow-400/30 rounded-full blur-sm"
+          className="absolute w-3 h-3 bg-yellow-400/50 rounded-full blur-sm"
           style={{
             left: '20%',
             top: '15%',
@@ -224,7 +224,7 @@ const FloatingElements = () => {
           }}
         />
         <div
-          className="absolute w-2 h-2 bg-orange-400/40 rounded-full blur-sm"
+          className="absolute w-2 h-2 bg-orange-400/60 rounded-full blur-sm"
           style={{
             left: '75%',
             top: '25%',
@@ -232,7 +232,7 @@ const FloatingElements = () => {
           }}
         />
         <div
-          className="absolute w-4 h-4 bg-blue-400/20 rounded-full blur-sm"
+          className="absolute w-4 h-4 bg-blue-400/40 rounded-full blur-sm"
           style={{
             left: '30%',
             top: '60%',
@@ -240,7 +240,7 @@ const FloatingElements = () => {
           }}
         />
         <div
-          className="absolute w-2 h-2 bg-purple-400/30 rounded-full blur-sm"
+          className="absolute w-2 h-2 bg-purple-400/50 rounded-full blur-sm"
           style={{
             left: '80%',
             top: '70%',
@@ -250,7 +250,7 @@ const FloatingElements = () => {
         
         {/* Floating lines */}
         <div
-          className="absolute w-12 h-0.5 bg-gradient-to-r from-yellow-400/20 to-transparent"
+          className="absolute w-12 h-0.5 bg-gradient-to-r from-yellow-400/40 to-transparent"
           style={{
             left: '25%',
             top: '40%',
@@ -258,7 +258,7 @@ const FloatingElements = () => {
           }}
         />
         <div
-          className="absolute w-8 h-0.5 bg-gradient-to-r from-blue-400/20 to-transparent"
+          className="absolute w-8 h-0.5 bg-gradient-to-r from-blue-400/40 to-transparent"
           style={{
             left: '70%',
             top: '55%',

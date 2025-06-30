@@ -1,12 +1,246 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Heart, Brain, Globe, Palette, Users, Zap, Target, Coffee, Gamepad2, Music, CheckCircle, Clock, Beaker, MessageSquare, Building, Factory, BarChart3, Eye, Mail, ArrowRight, Star, Rocket, Search, HandHeart, TrendingUp, Code, Smile } from 'lucide-react';
+import { Heart, Brain, Globe, Palette, Users, Zap, Target, Coffee, Gamepad2, Music, CheckCircle, Clock, Beaker, MessageSquare, Building, Factory, BarChart3, Eye, Mail, ArrowRight, Star, Rocket, Search, HandHeart, TrendingUp, Code, Smile, Camera, MapPin, Calendar, Award, Briefcase } from 'lucide-react';
 import { useState } from 'react';
 import InteractiveCard from '../components/InteractiveCard';
 
 const LifeAtAC9 = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [contactType, setContactType] = useState<string>('');
+
+  // Team members with real photos
+  const teamMembers = [
+    {
+      name: "Amit Singh",
+      role: "Chairman & Co-Founder",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaRxDRrudIbQ988kG-M_49vP-uU6d5tG6wDw&s",
+      bio: "Visionary leader with 20+ years in tech",
+      location: "Coimbatore",
+      joinedDate: "Jan 2024"
+    },
+    {
+      name: "Sudhagar Chinnasamy", 
+      role: "Founder & CEO",
+      image: "https://avatars.githubusercontent.com/u/3543343?v=4",
+      bio: "AI expert and strategic innovator",
+      location: "Coimbatore",
+      joinedDate: "Jan 2024"
+    },
+    {
+      name: "Gowtham",
+      role: "Lead Mobile Developer",
+      image: "../../public/blank-profile.jpg",
+      bio: "React specialist with design flair",
+      location: "Remote",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Sathya",
+      role: "Lead Mobile Developer",
+      image: "../../public/blank-profile.jpg",
+      bio: "ML enthusiast building the future",
+      location: "Coimbatore",
+      joinedDate: "Feb 2024"
+    },
+    {
+      name: "Rahul Nishanth",
+      role: "Mobile Developer Intern",
+      image: "../../public/blank-profile.jpg",
+      bio: "Creating beautiful user experiences",
+      location: "Remote",
+      joinedDate: "Apr 2024"
+    },
+    {
+      name: "Barath",
+      role: "Frontend Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Afsal",
+      role: "Backend Engineer Intern",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Soorya",
+      role: "Backend Engineer Intern",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Navneethan AT",
+      role: "Backend Engineer Intern",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Navneethan S",
+      role: "Backend Lead",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Deenadayalan",
+      role: "Backend Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Harini Shree",
+      role: "Backend Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Naveen",
+      role: "Backend Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Nivedha",
+      role: "QA Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Gohul",
+      role: "QA Intern",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Aadharsh",
+      role: "QA Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Thangaraj",
+      role: "QA Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Mathan Mohan",
+      role: "Dev Ops Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Kalaivanan",
+      role: "Dev Ops Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Pradeep kumar",
+      role: "Data Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Palanivelrajan",
+      role: "BA Engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Vethaprasath",
+      role: "Salesforce engineer",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    },
+    {
+      name: "Malavika",
+      role: "HR",
+      image: "../../public/blank-profile.jpg",
+      bio: "Scaling systems for millions",
+      location: "Coimbatore",
+      joinedDate: "Mar 2024"
+    }
+  ];
+
+  // Company activities and trips
+  const activities = [
+    {
+      title: "Team Hackathon 2024",
+      date: "March 2024",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
+      description: "48-hour innovation sprint where our team built amazing prototypes",
+      participants: "12 team members"
+    },
+    {
+      title: "Ooty Team Retreat",
+      date: "February 2024", 
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+      description: "Mountain retreat for team bonding and strategic planning",
+      participants: "Entire team"
+    },
+    {
+      title: "Office Game Night",
+      date: "Weekly",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&h=400&fit=crop",
+      description: "Friday evening games, pizza, and team bonding",
+      participants: "Open to all"
+    },
+    {
+      title: "AI Conference Mumbai",
+      date: "January 2024",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop",
+      description: "Team attended India's largest AI conference for learning and networking",
+      participants: "6 team members"
+    },
+    {
+      title: "Coimbatore Tech Meetup",
+      date: "Monthly",
+      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop",
+      description: "Hosting and participating in local tech community events",
+      participants: "Tech community"
+    },
+    {
+      title: "Wellness Wednesday",
+      date: "Weekly",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
+      description: "Yoga sessions, meditation, and wellness activities",
+      participants: "All interested"
+    }
+  ];
 
   const cultureCards = [
     {
@@ -53,48 +287,6 @@ const LifeAtAC9 = () => {
     }
   ];
 
-  const productDNA = [
-    {
-      emoji: "⚡",
-      title: "Speed Matters",
-      description: "We ship fast and iterate faster. No perfection paralysis."
-    },
-    {
-      emoji: "🔍",
-      title: "Precision Wins",
-      description: "Accuracy > hype. Our AI hits the mark or doesn't ship."
-    },
-    {
-      emoji: "🤝",
-      title: "Human × Tech",
-      description: "We co-create with our users, not for them."
-    },
-    {
-      emoji: "🧠",
-      title: "Learn > Repeat",
-      description: "Every build is a lesson. Feedback is our fuel."
-    }
-  ];
-
-  const wallOfWins = [
-    {
-      month: "May 2025",
-      win: "Onboarded 2 engineers, launched AI doc parser beta"
-    },
-    {
-      month: "April 2025",
-      win: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-    },
-    {
-      month: "March 2025",
-      win: "3 new roles opened. Culture survey hit 92% team happiness"
-    },
-    {
-      month: "Feb 2025",
-      win: "Team offsite + first internal hackathon results shipped to prod"
-    }
-  ];
-
   const perks = [
     {
       icon: Coffee,
@@ -128,15 +320,6 @@ const LifeAtAC9 = () => {
     }
   ];
 
-  const teamValues = [
-    "Transparency in everything we do",
-    "Continuous learning and growth",
-    "Celebrating failures as learning opportunities",
-    "Open communication and feedback",
-    "Innovation through collaboration",
-    "Respect for work-life integration"
-  ];
-
   const contactOptions = [
     { id: 'automate', label: 'I want to automate something', icon: Zap },
     { id: 'partnership', label: "Let's talk partnerships", icon: HandHeart },
@@ -145,97 +328,147 @@ const LifeAtAC9 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white transition-colors duration-300">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-white to-yellow-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden transition-colors duration-300">
-        <div className="absolute inset-0 opacity-20 dark:opacity-10">
-          <div className="absolute top-10 right-20 w-48 h-48 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 dark:from-yellow-500/20 dark:to-orange-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-yellow-500/25 to-yellow-600/25 dark:from-yellow-600/15 dark:to-yellow-700/15 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
+      <section className="pt-24 pb-16 bg-gradient-to-br from-white to-yellow-50 relative overflow-hidden transition-colors duration-300">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 right-20 w-48 h-48 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-yellow-500/25 to-yellow-600/25 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900/40 dark:to-yellow-800/40 border-2 border-yellow-300 dark:border-yellow-600/50 text-yellow-800 dark:text-yellow-200 text-lg font-bold rounded-full shadow-medium hover:shadow-yellow-lg transition-all duration-100 mb-8">
-              <Heart className="w-6 h-6 mr-3 animate-sparkle-fast text-yellow-600 dark:text-yellow-400" />
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 border-2 border-yellow-300 text-yellow-800 text-lg font-bold rounded-full shadow-medium hover:shadow-yellow-lg transition-all duration-100 mb-8">
+              <Heart className="w-6 h-6 mr-3 animate-sparkle-fast text-yellow-600" />
               LIFE AT AC9
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-gray-100 mb-8 leading-tight transition-colors duration-300">
-              Beyond <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">AI</span>
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight transition-colors duration-300">
+              Beyond <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">AI</span>
             </h1>
             
-            <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto transition-colors duration-300">
+            <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed max-w-4xl mx-auto transition-colors duration-300">
               We're not just building the future of AI—we're creating a workplace where 
-              <span className="text-yellow-600 dark:text-yellow-400 font-bold"> humans thrive</span>, 
-              <span className="text-yellow-600 dark:text-yellow-400 font-bold"> creativity flows</span>, and 
-              <span className="text-yellow-600 dark:text-yellow-400 font-bold"> impact matters</span>.
+              <span className="text-yellow-600 font-bold"> humans thrive</span>, 
+              <span className="text-yellow-600 font-bold"> creativity flows</span>, and 
+              <span className="text-yellow-600 font-bold"> impact matters</span>.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Product DNA Grid */}
-      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white dark:from-gray-900 dark:via-gray-800/20 dark:to-gray-900 relative overflow-hidden transition-colors duration-300">
+      {/* Meet Our Team */}
+      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 border-2 border-blue-300 dark:border-blue-600/50 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
-              <Brain className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
-              🧬 PRODUCT DNA
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 border-2 border-blue-300 text-blue-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
+              <Users className="w-6 h-6 mr-3 text-blue-600" />
+              OUR TEAM
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
-              Core <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">Principles</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
+              Meet the <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Humans</span> Behind the AI
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
-              These principles guide every product decision we make.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+              Talented individuals from diverse backgrounds, united by a shared passion for building meaningful technology.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {productDNA.map((principle, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-6 rounded-xl border-2 border-gray-200/50 dark:border-gray-600/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast text-center"
-                intensity={0.7}
+                className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast group"
+                intensity={0.8}
               >
-                <div className="text-4xl mb-4 animate-float-fast">{principle.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 transition-colors duration-300">{principle.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm transition-colors duration-300">{principle.description}</p>
+                <div className="text-center">
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto overflow-hidden rounded-2xl shadow-yellow group-hover:shadow-yellow-lg transition-all duration-200 border-4 border-yellow-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    {/* <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    </div> */}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-200">
+                    {member.name}
+                  </h3>
+                  <p className="text-yellow-600 font-semibold mb-3">{member.role}</p>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                  
+                  <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
+                    <div className="flex items-center">
+                      <MapPin className="w-3 h-3 mr-1" />
+                      {member.location}
+                    </div>
+                    <div className="flex items-center">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {member.joinedDate}
+                    </div>
+                  </div>
+                </div>
               </InteractiveCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Wall of Wins */}
-      <section className="py-20 bg-gradient-to-br from-green-50/50 via-white to-green-100/30 dark:from-gray-800/50 dark:via-gray-900 dark:to-gray-800/30 relative overflow-hidden transition-colors duration-300">
+      {/* Activities & Trips */}
+      <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 border-2 border-green-300 dark:border-green-600/50 text-green-800 dark:text-green-200 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
-              <Star className="w-6 h-6 mr-3 text-green-600 dark:text-green-400" />
-              🧩 AC9 WALL OF WINS
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 border-2 border-green-300 text-green-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
+              <Camera className="w-6 h-6 mr-3 text-green-600" />
+              ACTIVITIES & TRIPS
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
-              Recent <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">Highlights</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
+              Life Beyond <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Code</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
-              Building trust through transparency.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+              We believe great work happens when great people connect. Here's how we build bonds beyond the office.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {wallOfWins.map((win, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {activities.map((activity, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-6 rounded-xl border-2 border-green-200/50 dark:border-green-600/50 shadow-medium hover:shadow-green-lg transition-all duration-200 card-hover-fast"
-                intensity={0.7}
+                className="bg-white/80 backdrop-blur-xl rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast overflow-hidden group"
+                intensity={0.8}
               >
-                <div className="flex items-center mb-3">
-                  <div className="w-3 h-3 bg-green-500 dark:bg-green-400 rounded-full mr-3 animate-sparkle-fast"></div>
-                  <span className="text-sm font-bold text-green-700 dark:text-green-300">{win.month}</span>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={activity.image}
+                    alt={activity.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-bold">
+                      {activity.date}
+                    </span>
+                  </div>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm transition-colors duration-300">{win.win}</p>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-200">
+                    {activity.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{activity.description}</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Users className="w-4 h-4 mr-1" />
+                      {activity.participants}
+                    </div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
               </InteractiveCard>
             ))}
           </div>
@@ -243,13 +476,13 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* Culture Cards Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 dark:from-gray-800/50 dark:via-gray-900 dark:to-gray-800/30 relative overflow-hidden transition-colors duration-300">
+      <section className="py-20 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
-              Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">Culture</span> Cards
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
+              Our <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Culture</span> Cards
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               These aren't just values on a wall—they're the principles that guide every decision we make.
             </p>
           </div>
@@ -261,18 +494,18 @@ const LifeAtAC9 = () => {
                 className="group relative"
                 intensity={0.8}
               >
-                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-gray-200/50 dark:border-gray-600/50 shadow-medium hover:shadow-strong transition-all duration-300 h-full relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}></div>
+                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-300 h-full relative overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
                   
                   <div className="relative z-10">
                     <div className="text-4xl mb-4 animate-float-fast">{card.emoji}</div>
-                    <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
+                    <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300">
                       {card.title}
                     </h3>
-                    <p className="text-lg font-bold text-yellow-600 dark:text-yellow-400 mb-4 transition-colors duration-300">
+                    <p className="text-lg font-bold text-yellow-600 mb-4 transition-colors duration-300">
                       {card.subtitle}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                    <p className="text-gray-600 leading-relaxed transition-colors duration-300">
                       {card.description}
                     </p>
                   </div>
@@ -284,13 +517,13 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* Perks & Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 dark:from-gray-800/50 dark:via-gray-900 dark:to-gray-800/30 relative overflow-hidden transition-colors duration-300">
+      <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
-              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent">Perks</span> & Benefits
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Perks</span> & Benefits
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               We believe in taking care of our team so they can do their best work.
             </p>
           </div>
@@ -299,49 +532,14 @@ const LifeAtAC9 = () => {
             {perks.map((perk, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-6 rounded-xl border-2 border-yellow-200/50 dark:border-yellow-600/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast"
+                className="bg-white/80 backdrop-blur-xl p-6 rounded-xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast"
                 intensity={0.7}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 dark:from-yellow-500 dark:to-yellow-700 rounded-xl flex items-center justify-center mb-4 shadow-yellow">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mb-4 shadow-yellow">
                   <perk.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 transition-colors duration-300">{perk.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">{perk.description}</p>
-              </InteractiveCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Values Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 text-white relative overflow-hidden transition-colors duration-300">
-        <div className="absolute inset-0 opacity-20 dark:opacity-10">
-          <div className="absolute left-20 top-10 w-64 h-64 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 dark:from-yellow-500/15 dark:to-orange-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute right-15 bottom-15 w-48 h-48 bg-gradient-to-r from-blue-400/20 to-purple-400/20 dark:from-blue-500/15 dark:to-purple-500/15 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              What We Stand For
-            </h2>
-            <p className="text-xl text-gray-300 dark:text-gray-400 max-w-3xl mx-auto">
-              Our values aren't just words—they're the foundation of everything we build.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {teamValues.map((value, index) => (
-              <InteractiveCard
-                key={index}
-                darkMode={true}
-                className="bg-white/10 dark:bg-white/5 backdrop-blur-xl p-6 rounded-xl border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-200"
-                intensity={0.6}
-              >
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-yellow-400 dark:bg-yellow-500 rounded-full mr-4 flex-shrink-0 animate-sparkle-fast"></div>
-                  <p className="text-lg font-medium text-white">{value}</p>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300">{perk.title}</h3>
+                <p className="text-gray-600 leading-relaxed transition-colors duration-300">{perk.description}</p>
               </InteractiveCard>
             ))}
           </div>
@@ -349,17 +547,17 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* Enhanced Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white dark:from-gray-900 dark:via-gray-800/20 dark:to-gray-900 relative overflow-hidden transition-colors duration-300">
+      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 border-2 border-blue-300 dark:border-blue-600/50 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
-              <Mail className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
-              📩 GET IN TOUCH
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 border-2 border-blue-300 text-blue-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
+              <Mail className="w-6 h-6 mr-3 text-blue-600" />
+              GET IN TOUCH
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
               What do you want to talk about?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 transition-colors duration-300">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 transition-colors duration-300">
               Smart routing helps personalize our conversation.
             </p>
           </div>
@@ -369,29 +567,28 @@ const LifeAtAC9 = () => {
               {contactOptions.map((option) => (
                 <InteractiveCard
                   key={option.id}
-                  className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                  className={`rounded-xl border-2 cursor-pointer transition-all duration-200 ${
                     contactType === option.id
-                      ? 'bg-yellow-100 dark:bg-yellow-900/40 border-yellow-400 dark:border-yellow-600 shadow-yellow-lg'
-                      : 'bg-white/80 dark:bg-gray-800/80 border-gray-200 dark:border-gray-600 hover:border-yellow-300 dark:hover:border-yellow-600 hover:shadow-medium'
+                      ? 'bg-yellow-100 border-yellow-400 shadow-yellow-lg'
+                      : 'bg-white/80 border-gray-200 hover:border-yellow-300 hover:shadow-medium'
                   }`}
                   intensity={0.7}
-                  onClick={() => setContactType(option.id)}
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 p-6" onClick={() => setContactType(option.id)}>
                     <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
                       contactType === option.id
-                        ? 'border-yellow-500 dark:border-yellow-400 bg-yellow-500 dark:bg-yellow-400'
-                        : 'border-gray-300 dark:border-gray-600'
+                        ? 'border-yellow-500 bg-yellow-500'
+                        : 'border-gray-300'
                     }`}>
                       {contactType === option.id && (
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       )}
                     </div>
                     <option.icon className={`w-5 h-5 ${
-                      contactType === option.id ? 'text-yellow-600 dark:text-yellow-400' : 'text-gray-500 dark:text-gray-400'
+                      contactType === option.id ? 'text-yellow-600' : 'text-gray-500'
                     }`} />
                     <span className={`font-medium ${
-                      contactType === option.id ? 'text-yellow-800 dark:text-yellow-200' : 'text-gray-700 dark:text-gray-300'
+                      contactType === option.id ? 'text-yellow-800' : 'text-gray-700'
                     }`}>
                       {option.label}
                     </span>
@@ -403,14 +600,14 @@ const LifeAtAC9 = () => {
             <div className="text-center">
               <InteractiveCard intensity={1.0}>
                 <a
-                  href={`mailto:careers@abovecloud9.ai?subject=${
+                  href={`mailto:careers@AboveCloud9.AI?subject=${
                     contactType === 'automate' ? 'Automation Inquiry' :
                     contactType === 'partnership' ? 'Partnership Discussion' :
                     contactType === 'work' ? 'Career Opportunity' :
                     contactType === 'browse' ? 'General Inquiry' :
                     'Hello from AC9 Website'
                   }`}
-                  className="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 dark:from-yellow-600 dark:to-yellow-700 dark:hover:from-yellow-700 dark:hover:to-yellow-800 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 hover:shadow-2xl shadow-strong"
+                  className="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 hover:shadow-2xl shadow-strong"
                 >
                   Start the Conversation
                   <ArrowRight className="ml-3 w-5 h-5" />
@@ -422,16 +619,16 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-100/60 to-yellow-200/40 dark:from-gray-800/60 dark:to-gray-700/40 backdrop-blur-xl relative overflow-hidden transition-colors duration-300">
+      <section className="py-20 bg-gradient-to-br from-yellow-100/60 to-yellow-200/40 backdrop-blur-xl relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <InteractiveCard intensity={0.5}>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
               Ready to Join Our Journey?
             </h2>
           </InteractiveCard>
           
           <InteractiveCard intensity={0.3}>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto transition-colors duration-300">
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto transition-colors duration-300">
               If our culture resonates with you and you're excited about building the future of AI, 
               we'd love to hear from you.
             </p>
@@ -441,7 +638,7 @@ const LifeAtAC9 = () => {
             <InteractiveCard intensity={1.0}>
               <a
                 href="/careers"
-                className="inline-block bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 dark:from-yellow-600 dark:to-yellow-700 dark:hover:from-yellow-700 dark:hover:to-yellow-800 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 hover:shadow-2xl shadow-strong"
+                className="inline-block bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 hover:shadow-2xl shadow-strong"
               >
                 View Open Positions
               </a>
@@ -449,8 +646,8 @@ const LifeAtAC9 = () => {
             
             <InteractiveCard intensity={0.8}>
               <a
-                href="mailto:careers@AboveCloud9.ai?subject=General Application"
-                className="inline-block bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 border-2 border-yellow-500 dark:border-yellow-600 hover:border-yellow-600 dark:hover:border-yellow-500 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 shadow-strong"
+                href="mailto:careers@AboveCloud9.AI?subject=General Application"
+                className="inline-block bg-white hover:bg-gray-50 text-gray-800 border-2 border-yellow-500 hover:border-yellow-600 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 shadow-strong"
               >
                 Get in Touch
               </a>

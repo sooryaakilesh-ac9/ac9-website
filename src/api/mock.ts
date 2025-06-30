@@ -1,4 +1,3 @@
-
 import { Brain, Zap, Shield, BarChart3, Cloud, Cpu, Settings, CheckCircle, Target, Eye } from 'lucide-react';
 import type { ElementType } from 'react';
 
@@ -130,13 +129,13 @@ const aboutData: AboutData = {
       name: "Amit Singh",
       role: "Chairman",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaRxDRrudIbQ988kG-M_49vP-uU6d5tG6wDw&s",
-      bio: "Visionary leader with 20+ years in technology and business transformation. Former executive at Google, Oracle, and Palo Alto Networks."
+      bio: "Visionary leader with 20+ years in technology and business transformation. Former executive at Google, Oracle, and Palo Alto Networks, bringing deep expertise in scaling AI solutions globally."
     },
     {
       name: "Sudhagar Chinnasamy",
-      role: "Founder",
+      role: "Founder & CEO",
       image: "https://avatars.githubusercontent.com/u/3543343?v=4",
-      bio: "AI expert and strategic innovator driving our mission to transform businesses. Former technical lead at Meta, WhatsApp, and Ericsson."
+      bio: "AI expert and strategic innovator driving our mission to transform businesses through human-centered technology. Former technical lead at Meta, WhatsApp, and Ericsson with expertise in large-scale AI systems."
     }
   ]
 };
