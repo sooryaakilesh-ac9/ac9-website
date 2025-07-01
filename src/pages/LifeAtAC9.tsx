@@ -359,66 +359,6 @@ const LifeAtAC9 = () => {
         </div>
       </section>
 
-      {/* Meet Our Team */}
-      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 border-2 border-blue-300 text-blue-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
-              <Users className="w-6 h-6 mr-3 text-blue-600" />
-              OUR TEAM
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
-              Meet the <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Humans</span> Behind the AI
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
-              Talented individuals from diverse backgrounds, united by a shared passion for building meaningful technology.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <InteractiveCard
-                key={index}
-                className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast group"
-                intensity={0.8}
-              >
-                <div className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-32 h-32 mx-auto overflow-hidden rounded-2xl shadow-yellow group-hover:shadow-yellow-lg transition-all duration-200 border-4 border-yellow-300">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    {/* <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                    </div> */}
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-200">
-                    {member.name}
-                  </h3>
-                  <p className="text-yellow-600 font-semibold mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
-                  
-                  <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
-                    <div className="flex items-center">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {member.location}
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {member.joinedDate}
-                    </div>
-                  </div>
-                </div>
-              </InteractiveCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Activities & Trips */}
       <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
