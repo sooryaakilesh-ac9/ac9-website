@@ -53,10 +53,9 @@ const Hero = () => {
           <div className="mb-12 max-w-4xl mx-auto animate-fade-in-fast animation-delay-200">
             <InteractiveCard intensity={0.3}>
               <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed">
-              We’re a tight, <span className="text-yellow-600 font-bold">product-first engineering team </span>designing AI-powered tools that reduce
-complexity and help teams move faster. We’re currently working with a key early-stage
-partner while <span className="text-yellow-600 font-bold">prototyping scalable internal products</span> that solve recurring pain points in
-automation, data intelligence, and AI usability.           
+We're an <span className="text-yellow-600 font-bold">impact-driven</span>, product-focused engineering team building <span className="text-yellow-600 font-bold">scalable</span> tools that abstract away complexity in
+<span className="text-yellow-600 font-bold">automation, data intelligence, and AI integration</span>. Right now, we're partnering with an early-stage company to validate 
+core use cases while rapidly prototyping internal platforms that solve repeatable technical pain points across modern stacks.
               </p>
             </InteractiveCard>
           </div>
