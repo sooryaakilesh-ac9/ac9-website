@@ -1,11 +1,9 @@
 import React from 'react';
-import { Briefcase, MapPin, Clock, DollarSign, ChevronLeft, ChevronRight, Users, Heart, Target } from 'lucide-react';
+import { Briefcase, MapPin, Clock, DollarSign, Users, Heart, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import InteractiveCard from './InteractiveCard';
 
 const Careers = () => {
-  const [currentAdvantage, setCurrentAdvantage] = useState(0);
 
   const advantages = [
     {
@@ -16,7 +14,7 @@ const Careers = () => {
     {
       icon: Briefcase,
       title: "Unparalleled Growth", 
-      description: "Work alongside brilliant minds from top tech companies and accelerate your career with real ownership from day one."
+      description: "Work alongside brilliant minds from top tech companies and accelerate your career with ownership from day one."
     },
     {
       icon: Heart,
@@ -24,14 +22,6 @@ const Careers = () => {
       description: "Build products that directly improve people's lives and contribute to solving real-world problems through AI."
     }
   ];
-
-  const nextAdvantage = () => {
-    setCurrentAdvantage((prev) => (prev + 1) % advantages.length);
-  };
-
-  const prevAdvantage = () => {
-    setCurrentAdvantage((prev) => (prev - 1 + advantages.length) % advantages.length);
-  };
 
   const whyJoinUs = [
     {
@@ -134,50 +124,25 @@ const Careers = () => {
           </div>
         </div>
 
-        {/* Advantages Carousel */}
+        {/* Advantages Cards */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 mb-2 text-center">
             What We Offer
           </h3>
           <div className="w-16 h-1 bg-yellow-500 mx-auto mb-12"></div>
           
-          <div className="relative max-w-3xl mx-auto">
-            <InteractiveCard intensity={0.8}>
-              <div className="bg-white/80 backdrop-blur-md p-10 border-2 border-yellow-200/50 shadow-lg rounded-2xl text-center min-h-[250px] flex flex-col justify-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-yellow">
-                  {React.createElement(advantages[currentAdvantage].icon, { className: "w-10 h-10 text-white" })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {advantages.map((advantage, index) => (
+              <InteractiveCard key={index} intensity={0.8}>
+                <div className="bg-white/80 backdrop-blur-xl p-8 border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg rounded-2xl text-center transition-all duration-200 card-hover-fast flex flex-col min-h-[280px]">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-yellow">
+                    <advantage.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h4>
+                  <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
                 </div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-4">{advantages[currentAdvantage].title}</h4>
-                <p className="text-gray-600 text-lg leading-relaxed">{advantages[currentAdvantage].description}</p>
-              </div>
-            </InteractiveCard>
-            
-            {/* Navigation buttons */}
-            <button
-              onClick={prevAdvantage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 border-2 border-yellow-200"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-            <button
-              onClick={nextAdvantage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 border-2 border-yellow-200"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
-            
-            {/* Dots indicator */}
-            <div className="flex justify-center mt-8 space-x-3">
-              {advantages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentAdvantage(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-200 ${
-                    index === currentAdvantage ? 'bg-yellow-500 scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
+              </InteractiveCard>
+            ))}
           </div>
         </div>
 

@@ -41,12 +41,13 @@ const Hero = () => {
           
           <div className="mb-8 animate-fade-in-fast animation-delay-100">
             <InteractiveCard intensity={0.4}>
-              <h1 className="text-6xl md:text-8xl font-black text-gray-800 mb-8 leading-tight py-[5px]">
-                <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Creating</span>{' '}
-                <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">A</span>{' '}
-                <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Happier</span>{' '}
-                <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">World</span>
-              </h1>
+            <h1 className="text-[54px] md:text-[86.4px] font-black text-gray-800 mb-8 leading-tight md:leading-[1.2] py-2 overflow-visible">
+              <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Creating</span>{' '}
+              <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">A</span>{' '}
+              <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Happier</span>{' '}
+              <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">World</span>
+            </h1>
+
             </InteractiveCard>
           </div>
           
@@ -61,19 +62,19 @@ core use cases while rapidly prototyping internal platforms that solve repeatabl
           </div>
 
           {/* Key Value Props */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto animate-fade-in-fast animation-delay-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto animate-fade-in-fast animation-delay-300">
             {[
               { icon: Target, title: "Purpose-Driven", desc: "Every solution we build has a clear mission: make life better" },
               { icon: Users, title: "Human-Centered", desc: "Technology should enhance human potential, not replace it" },
               { icon: Rocket, title: "Innovation First", desc: "We don't just follow trends—we create the future" }
             ].map((item, index) => (
               <InteractiveCard key={index} intensity={0.7}>
-                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mb-4 mx-auto shadow-yellow">
-                    <item.icon className="w-6 h-6 text-white" />
+                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast flex flex-col text-center min-h-[280px]">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-yellow">
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               </InteractiveCard>
             ))}

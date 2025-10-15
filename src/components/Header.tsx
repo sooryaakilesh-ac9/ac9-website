@@ -95,22 +95,22 @@ const Header = () => {
         <div className="absolute inset-0 bg-white/90 backdrop-blur-xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-[70.4px]">
             {/* Logo */}
             <InteractiveCard intensity={0.8}>
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-150">
+                <div className="w-11 h-11 sm:w-[52.8px] sm:h-[52.8px] bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-150">
                   <img
                     src="/Abovecloudai Logo.svg"
                     alt="AboveCloud9.AI Logo"
-                    className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                    className="w-[26.4px] h-[26.4px] sm:w-[35.2px] sm:h-[35.2px] object-contain"
                   />
                 </div>
-                <span className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-yellow-600 group-hover:to-yellow-500 transition-all duration-150 hidden xs:block">
+                <span className="text-[19.8px] sm:text-[26.4px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-yellow-600 group-hover:to-yellow-500 transition-all duration-150 hidden xs:block">
                   AboveCloud9.AI
                 </span>
                 {/* Shorter version for very small screens */}
-                <span className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-yellow-600 group-hover:to-yellow-500 transition-all duration-150 block xs:hidden">
+                <span className="text-[19.8px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-yellow-600 group-hover:to-yellow-500 transition-all duration-150 block xs:hidden">
                   AC9
                 </span>
               </Link>
@@ -124,13 +124,13 @@ const Header = () => {
                   <InteractiveCard key={index} intensity={0.6}>
                     <Link 
                       to={item.to} 
-                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-semibold text-sm xl:text-base transition-all duration-200 relative ${
+                      className={`flex items-center space-x-2 px-[17.6px] py-[8.8px] rounded-lg font-semibold text-[15.4px] xl:text-[17.6px] transition-all duration-200 relative ${
                         isActiveRoute(item.to) 
                           ? 'bg-white text-yellow-600 shadow-md border border-yellow-200' 
                           : 'text-gray-600 hover:text-yellow-600 hover:bg-white/50'
                       }`}
                     >
-                      <item.icon className="w-4 h-4" />
+                      <item.icon className="w-[17.6px] h-[17.6px]" />
                       <span>{item.label}</span>
                     </Link>
                   </InteractiveCard>
@@ -155,10 +155,10 @@ const Header = () => {
               <InteractiveCard intensity={0.8}>
                 <Link 
                   to="/careers"
-                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold text-sm transition-all duration-150 hover:scale-105 shadow-lg flex items-center space-x-1"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-[17.6px] py-[8.8px] rounded-lg font-bold text-[15.4px] transition-all duration-150 hover:scale-105 shadow-lg flex items-center space-x-1"
                 >
                   <span>Join</span>
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-[13.2px] h-[13.2px]" />
                 </Link>
               </InteractiveCard>
               
@@ -166,16 +166,16 @@ const Header = () => {
               <div className="mobile-menu-container">
                 <button 
                   onClick={handleHamburgerClick}
-                  className="relative w-12 h-12 bg-yellow-50 hover:bg-yellow-100 border-2 border-yellow-200 hover:border-yellow-300 rounded-xl transition-all duration-150 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                  className="relative w-[52.8px] h-[52.8px] bg-yellow-50 hover:bg-yellow-100 border-2 border-yellow-200 hover:border-yellow-300 rounded-xl transition-all duration-150 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
                   aria-label="Toggle mobile menu"
                   aria-expanded={isMenuOpen}
                   type="button"
                 >
-                  <div className="relative w-6 h-6 flex items-center justify-center">
+                  <div className="relative w-[26.4px] h-[26.4px] flex items-center justify-center">
                     {isMenuOpen ? (
-                      <X className="w-5 h-5 text-yellow-600 transition-transform duration-200 group-hover:scale-110" />
+                      <X className="w-[22px] h-[22px] text-yellow-600 transition-transform duration-200 group-hover:scale-110" />
                     ) : (
-                      <Menu className="w-5 h-5 text-yellow-600 transition-transform duration-200 group-hover:scale-110" />
+                      <Menu className="w-[22px] h-[22px] text-yellow-600 transition-transform duration-200 group-hover:scale-110" />
                     )}
                   </div>
                   
@@ -198,7 +198,7 @@ const Header = () => {
           />
           
           {/* Mobile menu */}
-          <div className="mobile-menu-container absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-yellow-200 shadow-2xl animate-slide-down-fast">
+          <div className="mobile-menu-container absolute top-[70.4px] left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-yellow-200 shadow-2xl animate-slide-down-fast">
             <div className="px-4 sm:px-6 py-6">
               {/* Mobile Navigation Tabs */}
               <div className="space-y-2 mb-6">
@@ -207,13 +207,13 @@ const Header = () => {
                     <Link 
                       to={item.to}
                       onClick={handleMobileMenuClick}
-                      className={`flex items-center space-x-3 font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-150 ${
+                      className={`flex items-center space-x-3 font-semibold text-[19.8px] py-[13.2px] px-[17.6px] rounded-lg transition-all duration-150 ${
                         isActiveRoute(item.to) 
                           ? 'text-yellow-600 bg-yellow-50 border-l-4 border-yellow-500' 
                           : 'text-gray-700 hover:text-yellow-600 hover:bg-yellow-50 border-l-4 border-transparent hover:border-yellow-500'
                       }`}
                     >
-                      <item.icon className="w-5 h-5" />
+                      <item.icon className="w-[22px] h-[22px]" />
                       <span>{item.label}</span>
                     </Link>
                   </div>
@@ -225,11 +225,11 @@ const Header = () => {
                 <Link 
                   to="/careers"
                   onClick={handleMobileMenuClick}
-                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-[26.4px] py-[17.6px] rounded-xl font-bold text-[19.8px] transition-all duration-150 hover:scale-105 shadow-lg"
                 >
-                  <Briefcase className="w-5 h-5" />
+                  <Briefcase className="w-[22px] h-[22px]" />
                   <span>Join Our Team</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-[22px] h-[22px]" />
                 </Link>
               </div>
             </div>
