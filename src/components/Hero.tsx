@@ -41,7 +41,7 @@ const Hero = () => {
           
           <div className="mb-8 animate-fade-in-fast animation-delay-100">
             <InteractiveCard intensity={0.4}>
-              <h1 className="text-6xl md:text-8xl font-black text-gray-800 mb-8 leading-tight">
+              <h1 className="text-6xl md:text-8xl font-black text-gray-800 mb-8 leading-tight py-[5px]">
                 <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Creating</span>{' '}
                 <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">A</span>{' '}
                 <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Happier</span>{' '}
