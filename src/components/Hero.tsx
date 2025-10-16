@@ -54,9 +54,10 @@ const Hero = () => {
           <div className="mb-12 max-w-4xl mx-auto animate-fade-in-fast animation-delay-200">
             <InteractiveCard intensity={0.3}>
               <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed">
-We're an <span className="text-yellow-600 font-bold">impact-driven</span>, product-focused engineering team building <span className="text-yellow-600 font-bold">scalable</span> tools that abstract away complexity in
-<span className="text-yellow-600 font-bold">automation, data intelligence, and AI integration</span>. Right now, we're partnering with an early-stage company to validate 
-core use cases while rapidly prototyping internal platforms that solve repeatable technical pain points across modern stacks.
+We're an <span className="text-yellow-600 font-bold">impact-driven</span>, engineering team building <span className="text-yellow-600 font-bold">scalable</span> products that simplify
+<span className="text-yellow-600 font-bold">automation, data intelligence, and AI integration</span>. 
+{/* Right now, we're partnering with an early-stage company to validate 
+key use cases while rapidly prototype internal platforms that solve real, repeatable technical challenges across modern stacks. */}
               </p>
             </InteractiveCard>
           </div>
@@ -64,7 +65,7 @@ core use cases while rapidly prototyping internal platforms that solve repeatabl
           {/* Key Value Props */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto animate-fade-in-fast animation-delay-300">
             {[
-              { icon: Target, title: "Purpose-Driven", desc: "Every solution we build has a clear mission: make life better" },
+              { icon: Target, title: "Purpose-Driven", desc: "Every solution we build has a clear mission: Make Life Better" },
               { icon: Users, title: "Human-Centered", desc: "Technology should enhance human potential, not replace it" },
               { icon: Rocket, title: "Innovation First", desc: "We don't just follow trends—we create the future" }
             ].map((item, index) => (

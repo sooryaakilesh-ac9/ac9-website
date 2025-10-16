@@ -8,7 +8,7 @@ const Careers = () => {
   const advantages = [
     {
       icon: DollarSign,
-      title: "Competitive Compensation",
+      title: "Top-Tier Compensation",
       description: "Industry-leading salaries with equity participation and performance bonuses that reward excellence."
     },
     {
