@@ -63,10 +63,10 @@ const Contact = () => {
             </InteractiveCard>
             
             <InteractiveCard intensity={0.3}>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
-                Ready to transform your business with AI? Have a question about our work? 
+            <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed">
+            Ready to transform your business with AI? Have a question about our work? 
                 We'd love to hear from you and explore how we can help.
-              </p>
+</p>
             </InteractiveCard>
           </div>
         </div>
@@ -127,18 +127,6 @@ const Contact = () => {
                   </InteractiveCard>
                 ))}
               </div>
-
-              {/* Office Hours */}
-              <InteractiveCard intensity={0.5}>
-                <div className="bg-yellow-50 p-6 rounded-xl border-2 border-yellow-200">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">Office Hours</h4>
-                  <div className="space-y-2 text-gray-700">
-                    <p><span className="font-medium">Monday - Friday:</span> 9:00 AM - 6:00 PM IST</p>
-                    <p><span className="font-medium">Saturday:</span> 10:00 AM - 2:00 PM IST</p>
-                    <p><span className="font-medium">Sunday:</span> Closed</p>
-                  </div>
-                </div>
-              </InteractiveCard>
             </div>
 
             {/* Contact Form */}
@@ -148,7 +136,7 @@ const Contact = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
                   
                   {/* Contact Type Selection */}
-                  <div className="mb-8">
+                  {/* <div className="mb-8">
                     <label className="block text-sm font-bold text-gray-700 mb-4">What do you want to talk about?</label>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {contactOptions.map((option) => (
@@ -184,7 +172,7 @@ const Contact = () => {
                         </button>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

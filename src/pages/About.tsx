@@ -83,11 +83,11 @@ const About = () => {
             </InteractiveCard>
             
             <InteractiveCard intensity={0.3}>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed transition-colors duration-300">
-                We're a fast-moving AI product company founded by engineers from WhatsApp, Meta, 
+            <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed">
+            We're a fast-moving AI product company founded by engineers from WhatsApp, Meta, 
                 Google, Oracle, and Palo Alto Networks. We combine deep expertise with startup velocity 
                 to create AI tools that make life better—for businesses and people.
-              </p>
+</p>
             </InteractiveCard>
           </div>
         </div>
