@@ -14,10 +14,9 @@ const Careers = () => {
     {
       icon: Smartphone,
       title: "Mobile Engineer",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Engineering",
-      techStack: "Flutter / React Native / Native iOS or Android",
       workOn: [
         "Building clean, performant mobile applications",
         "Integrating APIs and optimizing for mobile performance",
@@ -35,10 +34,9 @@ const Careers = () => {
     {
       icon: BarChart3,
       title: "Data Engineer",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Engineering",
-      techStack: "Python, SQL, Apache Spark, AWS, Data Pipeline Tools",
       workOn: [
         "Designing and building scalable data pipelines",
         "Optimizing data processing and storage systems",
@@ -56,10 +54,9 @@ const Careers = () => {
     {
       icon: Users,
       title: "Business Analyst",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Operations",
-      techStack: "Business Analysis, SQL, Data Visualization, Project Management",
       workOn: [
         "Analyzing business requirements and processes",
         "Creating detailed specifications for development teams",
@@ -77,10 +74,9 @@ const Careers = () => {
     {
       icon: Settings,
       title: "DevOps Engineer",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Engineering",
-      techStack: "Docker, Kubernetes, AWS, CI/CD, Infrastructure as Code",
       workOn: [
         "Building and maintaining cloud infrastructure",
         "Implementing CI/CD pipelines and automation",
@@ -98,10 +94,9 @@ const Careers = () => {
     {
       icon: Code,
       title: "Backend Lead",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Engineering",
-      techStack: "Node.js, Python, PostgreSQL, Redis, Microservices",
       workOn: [
         "Leading backend development and architecture decisions",
         "Building scalable APIs and microservices",
@@ -119,10 +114,9 @@ const Careers = () => {
     {
       icon: CheckCircle,
       title: "QA Lead",
-      location: "Coimbatore / Remote",
+      location: "Coimbatore",
       type: "Full-time",
       category: "Engineering",
-      techStack: "Test Automation, Selenium, Cypress, API Testing, CI/CD",
       workOn: [
         "Leading QA strategy and test automation initiatives",
         "Building and maintaining test frameworks",
@@ -141,8 +135,7 @@ const Careers = () => {
 
   const filteredPositions = positions.filter(position => {
     const matchesCategory = selectedCategory === 'All' || position.category === selectedCategory;
-    const matchesSearch = position.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         position.techStack.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = position.title.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -190,7 +183,7 @@ const Careers = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Search positions or technologies..."
+                  placeholder="Search positions..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-white/80 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-yellow-500 transition-all duration-200"
@@ -269,8 +262,6 @@ const Careers = () => {
                       <div className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
                         {position.category}
                       </div>
-                      <p className="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
-                      <p className="text-sm text-gray-600">{position.techStack}</p>
                     </div>
                     
                     <div className="mb-6">
