@@ -37,7 +37,7 @@ const Contact = () => {
                    'Contact Form Submission';
     
     const body = `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:careers@AboveCloud9.AI?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:contact@aboveclooud9.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
@@ -81,7 +81,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="animate-fade-in-fast animation-delay-200">
               <InteractiveCard intensity={0.4}>
-                <h3 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h3>
+                <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 transition-colors duration-300">Contact Information</h3>
               </InteractiveCard>
               
               <div className="space-y-8 mb-12">
@@ -89,8 +89,8 @@ const Contact = () => {
                   { 
                     icon: Mail, 
                     label: 'Email', 
-                    value: 'careers@AboveCloud9.AI',
-                    href: 'mailto:careers@AboveCloud9.AI'
+                    value: 'contact@aboveclooud9.ai',
+                    href: 'mailto:contact@aboveclooud9.ai'
                   },
                   { 
                     icon: Phone, 
@@ -132,8 +132,8 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="animate-fade-in-fast animation-delay-300">
               <InteractiveCard intensity={0.7}>
-                <div className="bg-white/80 backdrop-blur-md p-8 border-2 border-gray-200/50 shadow-lg rounded-2xl">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+                <div className="bg-white/80 p-8 border-2 border-gray-200/50 shadow-lg rounded-2xl">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 transition-colors duration-300">Send us a message</h3>
                   
                   {/* Contact Type Selection */}
                   {/* <div className="mb-8">

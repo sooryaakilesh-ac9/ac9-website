@@ -56,7 +56,7 @@ const Header = () => {
 
   const navigationItems = [
     { to: "/", label: "Home", icon: Home },
-    { to: "/about", label: "About", icon: Users },
+    { to: "/about", label: "About Us", icon: Users },
     { to: "/careers", label: "Careers", icon: Briefcase },
     { to: "/life-at-ac9", label: "Life at AC9", icon: Heart },
     { to: "/contact", label: "Contact", icon: Mail },
@@ -92,20 +92,19 @@ const Header = () => {
           boxShadow: scrollY > 50 ? '0 10px 30px rgba(245, 158, 11, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)',
         }}
       >
-        <div className="absolute inset-0 bg-white/90 backdrop-blur-xl"></div>
+        <div className="absolute inset-0 bg-white/90"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex justify-between items-center h-[70.4px]">
             {/* Logo */}
             <InteractiveCard intensity={0.8}>
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-                <div className="w-11 h-11 sm:w-[52.8px] sm:h-[52.8px] bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-150">
-                  <img
-                    src="/Abovecloudai Logo.svg"
-                    alt="AboveCloud9.AI Logo"
-                    className="w-[26.4px] h-[26.4px] sm:w-[35.2px] sm:h-[35.2px] object-contain"
-                  />
-                </div>
+                <img
+                  src="/Logo 1.svg"
+                  alt="AboveCloud9.AI Logo"
+                  className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain group-hover:scale-110 transition-all duration-150"
+                  style={{ imageRendering: 'crisp-edges' }}
+                />
                 <span className="text-[19.8px] sm:text-[26.4px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-yellow-600 group-hover:to-yellow-500 transition-all duration-150 hidden xs:block">
                   AboveCloud9.AI
                 </span>
@@ -119,7 +118,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
               {/* Navigation Tabs */}
-              <div className="flex items-center space-x-1 bg-gray-100/80 backdrop-blur-sm rounded-xl p-1 border border-gray-200/50">
+              <div className="flex items-center space-x-1 bg-gray-100/80 rounded-xl p-1 border border-gray-200/50">
                 {navigationItems.map((item, index) => (
                   <InteractiveCard key={index} intensity={0.6}>
                     <Link 
@@ -193,12 +192,12 @@ const Header = () => {
         <div className="fixed inset-0 z-[90] lg:hidden">
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50"
             onClick={() => setIsMenuOpen(false)}
           />
           
           {/* Mobile menu */}
-          <div className="mobile-menu-container absolute top-[70.4px] left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-yellow-200 shadow-2xl animate-slide-down-fast">
+          <div className="mobile-menu-container absolute top-[70.4px] left-0 right-0 bg-white/95 border-b border-yellow-200 shadow-2xl animate-slide-down-fast">
             <div className="px-4 sm:px-6 py-6">
               {/* Mobile Navigation Tabs */}
               <div className="space-y-2 mb-6">

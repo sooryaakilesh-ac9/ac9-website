@@ -80,7 +80,7 @@ const Careers = () => {
           </InteractiveCard>
           
           <InteractiveCard intensity={0.4}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
               Join Our Mission
             </h2>
           </InteractiveCard>
@@ -96,7 +96,7 @@ const Careers = () => {
         {/* Why Join Us Section */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 transition-colors duration-300">
               {/* Why <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">AboveCloud9.ai</span>? */}
               Above the <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Noise.</span> Built <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Differently.</span>
             </h3>
@@ -107,7 +107,7 @@ const Careers = () => {
             {whyJoinUs.map((item, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 backdrop-blur-xl p-8 border-2 border-yellow-200/50 shadow-medium rounded-2xl text-center card-hover-fast"
+                className="bg-white/80 p-8 border-2 border-yellow-200/50 shadow-medium rounded-2xl text-center card-hover-fast"
                 intensity={0.7}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-yellow">
@@ -117,7 +117,7 @@ const Careers = () => {
                     <span className="text-2xl">{item.emoji}</span>
                   )}
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300">{item.title}</h4>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </InteractiveCard>
             ))}
@@ -126,7 +126,7 @@ const Careers = () => {
 
         {/* Advantages Cards */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 text-center transition-colors duration-300">
             What We Offer
           </h3>
           <div className="w-16 h-1 bg-yellow-500 mx-auto mb-12"></div>
@@ -134,11 +134,11 @@ const Careers = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {advantages.map((advantage, index) => (
               <InteractiveCard key={index} intensity={0.8}>
-                <div className="bg-white/80 backdrop-blur-xl p-8 border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg rounded-2xl text-center transition-all duration-200 card-hover-fast flex flex-col min-h-[280px]">
+                <div className="bg-white/80 p-8 border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg rounded-2xl text-center transition-all duration-200 card-hover-fast flex flex-col min-h-[280px]">
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-yellow">
                     <advantage.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h4>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300">{advantage.title}</h4>
                   <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
                 </div>
               </InteractiveCard>

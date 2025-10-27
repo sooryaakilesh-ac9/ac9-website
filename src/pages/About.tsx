@@ -102,7 +102,7 @@ const About = () => {
             {visionMission.map((item, index) => (
               <InteractiveCard
                 key={index}
-                className={`bg-gradient-to-br from-white/80 to-yellow-50/80 backdrop-blur-xl p-10 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast`}
+                className={`bg-gradient-to-br from-white/80 to-yellow-50/80 p-10 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast`}
                 intensity={0.6}
               >
                 <div className="flex items-center mb-6">
@@ -136,7 +136,7 @@ const About = () => {
             {companyStats.map((stat, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 backdrop-blur-xl p-6 rounded-xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast text-center"
+                className="bg-white/80 p-6 rounded-xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast text-center"
                 intensity={0.7}
               >
                 <div className={`w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 mx-auto`}>
@@ -164,7 +164,7 @@ const About = () => {
             {coreValues.map((value, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 backdrop-blur-xl p-8 border-2 border-yellow-200/50 shadow-medium rounded-2xl flex items-start space-x-6 card-hover-fast"
+                className="bg-white/80 p-8 border-2 border-yellow-200/50 shadow-medium rounded-2xl flex items-start space-x-6 card-hover-fast"
                 intensity={0.8}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center flex-shrink-0 group shadow-yellow">
@@ -213,7 +213,7 @@ const About = () => {
               leadership.map((leader, index) => (
                 <InteractiveCard
                   key={index}
-                  className="bg-white/80 backdrop-blur-xl p-8 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast"
+                  className="bg-white/80 p-8 shadow-medium border-2 border-yellow-200/50 rounded-2xl card-hover-fast"
                   intensity={0.7}
                 >
                   <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">

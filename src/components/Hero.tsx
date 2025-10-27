@@ -31,17 +31,17 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="text-center">
           <div className="inline-block mb-8 animate-fade-in-fast">
-            <InteractiveCard intensity={0.6}>
+            {/* <InteractiveCard intensity={0.6}>
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 border-2 border-yellow-300 text-yellow-800 text-lg font-bold rounded-full shadow-medium hover:shadow-yellow-lg transition-all duration-100 btn-hover-fast">
                 <Sparkles className="w-6 h-6 mr-3 animate-sparkle-fast text-yellow-600" />
                 AI-Powered Solutions
               </div>
-            </InteractiveCard>
+            </InteractiveCard> */}
           </div>
           
           <div className="mb-8 animate-fade-in-fast animation-delay-100">
             <InteractiveCard intensity={0.4}>
-            <h1 className="text-[54px] md:text-[86.4px] font-black text-gray-800 mb-8 leading-tight md:leading-[1.2] py-2 overflow-visible">
+            <h1 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight transition-colors duration-300">
               <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Creating</span>{' '}
               <span className="inline-block hover-lift-fast bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg">A</span>{' '}
               <span className="inline-block hover-lift-fast bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Happier</span>{' '}
@@ -70,7 +70,7 @@ key use cases while rapidly prototype internal platforms that solve real, repeat
               { icon: Rocket, title: "Innovation First", desc: "We don't just follow trends—we create the future" }
             ].map((item, index) => (
               <InteractiveCard key={index} intensity={0.7}>
-                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast flex flex-col text-center min-h-[280px]">
+                <div className="bg-white/80 p-8 rounded-2xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast flex flex-col text-center min-h-[280px]">
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-yellow">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
@@ -93,7 +93,7 @@ key use cases while rapidly prototype internal platforms that solve real, repeat
             </InteractiveCard>
             
             <InteractiveCard intensity={0.8}>
-              <button onClick={() => window.location.href = '/life-at-ac9'} className="group bg-white/90 hover:bg-white text-gray-800 px-12 py-5 rounded-2xl font-bold text-xl border-3 border-yellow-300 hover:border-yellow-500 transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden backdrop-blur-sm">
+              <button onClick={() => window.location.href = '/life-at-ac9'} className="group bg-white/90 hover:bg-white text-gray-800 px-12 py-5 rounded-2xl font-bold text-xl border-3 border-yellow-300 hover:border-yellow-500 transition-all duration-100 shadow-strong hover:shadow-yellow-lg btn-hover-fast relative overflow-hidden">
                 <span className="relative z-10">Learn More</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-50 to-yellow-100 opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
               </button>

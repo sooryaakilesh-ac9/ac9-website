@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Briefcase, MapPin, Clock, Palette, Brain, Smartphone, Users, Eye, Mail, Filter, Search } from 'lucide-react';
+import { Briefcase, MapPin, Clock, Palette, Brain, Smartphone, Users, Eye, Mail, Filter, Search, BarChart3, Settings, Code, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 import InteractiveCard from '../components/InteractiveCard';
 
@@ -8,56 +8,15 @@ const Careers = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = ['All', 'Engineering', 'AI/ML', 'Mobile', 'Operations'];
+  const categories = ['All', 'Engineering', 'Operations'];
 
   const positions = [
-    {
-      icon: Palette,
-      title: "Frontend Developer",
-      location: "Coimbatore / Remote",
-      type: "Full-time",
-      category: "Engineering",
-      techStack: "React, Next.js, TypeScript, Redux",
-      workOn: [
-        "Building beautiful, blazing-fast UIs that users love",
-        "Collaborating closely with backend + product teams",
-        "Shipping features that directly impact user experience"
-      ],
-      lookingFor: [
-        "2–4 years experience with modern frontend frameworks",
-        "Strong TypeScript and React foundations",
-        "Eye for detail + design sensibility",
-        "Bonus: Experience with AI dashboarding or data visualization"
-      ],
-      email: "careers@AboveCloud9.AI",
-      subject: "Frontend Developer Application"
-    },
-    {
-      icon: Brain,
-      title: "AI Engineer",
-      location: "Coimbatore / Remote",
-      type: "Full-time",
-      category: "AI/ML",
-      techStack: "Python, Transformers, OpenAI, HuggingFace, LangChain",
-      workOn: [
-        "Designing and deploying ML models for NLP and document intelligence",
-        "Fine-tuning LLMs for internal and client tools",
-        "Research + prototyping using cutting-edge AI frameworks"
-      ],
-      lookingFor: [
-        "1–3 years in AI/ML (or strong GitHub + project portfolio)",
-        "Proficiency in Python, Transformers, vector databases",
-        "Fast learners who love solving unsolved problems"
-      ],
-      email: "careers@AboveCloud9.AI",
-      subject: "AI Engineer Application"
-    },
     {
       icon: Smartphone,
       title: "Mobile Engineer",
       location: "Coimbatore / Remote",
       type: "Full-time",
-      category: "Mobile",
+      category: "Engineering",
       techStack: "Flutter / React Native / Native iOS or Android",
       workOn: [
         "Building clean, performant mobile applications",
@@ -65,32 +24,118 @@ const Careers = () => {
         "Working closely with designers and QA teams"
       ],
       lookingFor: [
-        "2+ years mobile app development experience",
+        "5+ years mobile app development experience",
         "Knowledge of secure, scalable mobile architecture",
+        "Experience with cross-platform development",
         "Bonus: Published apps on Play Store/App Store"
       ],
-      email: "careers@AboveCloud9.AI",
+      email: "careers@aboveclooud9.ai",
       subject: "Mobile Engineer Application"
     },
     {
-      icon: Users,
-      title: "HR Associate",
-      location: "Coimbatore (Onsite Preferred)",
+      icon: BarChart3,
+      title: "Data Engineer",
+      location: "Coimbatore / Remote",
       type: "Full-time",
-      category: "Operations",
-      techStack: "People Operations, Talent Management, Culture Building",
+      category: "Engineering",
+      techStack: "Python, SQL, Apache Spark, AWS, Data Pipeline Tools",
       workOn: [
-        "Owning people operations, engagement, and talent management",
-        "Leading hiring drives, events, and culture building initiatives",
-        "Supporting company growth with structure and heart"
+        "Designing and building scalable data pipelines",
+        "Optimizing data processing and storage systems",
+        "Collaborating with data scientists and analysts"
       ],
       lookingFor: [
-        "0–2 years HR experience (fresh graduates welcome)",
-        "Strong people skills and creative problem-solving",
-        "Comfortable with tech hiring and startup energy"
+        "6+ years experience in data engineering",
+        "Strong Python and SQL skills",
+        "Experience with cloud data platforms (AWS, GCP, Azure)",
+        "Knowledge of data warehousing and ETL processes"
       ],
-      email: "careers@AboveCloud9.AI",
-      subject: "HR Associate Application"
+      email: "careers@aboveclooud9.ai",
+      subject: "Data Engineer Application"
+    },
+    {
+      icon: Users,
+      title: "Business Analyst",
+      location: "Coimbatore / Remote",
+      type: "Full-time",
+      category: "Operations",
+      techStack: "Business Analysis, SQL, Data Visualization, Project Management",
+      workOn: [
+        "Analyzing business requirements and processes",
+        "Creating detailed specifications for development teams",
+        "Working with stakeholders to define project scope"
+      ],
+      lookingFor: [
+        "2.5+ years business analysis experience",
+        "Strong analytical and problem-solving skills",
+        "Experience with requirement gathering and documentation",
+        "Knowledge of agile methodologies"
+      ],
+      email: "careers@aboveclooud9.ai",
+      subject: "Business Analyst Application"
+    },
+    {
+      icon: Settings,
+      title: "DevOps Engineer",
+      location: "Coimbatore / Remote",
+      type: "Full-time",
+      category: "Engineering",
+      techStack: "Docker, Kubernetes, AWS, CI/CD, Infrastructure as Code",
+      workOn: [
+        "Building and maintaining cloud infrastructure",
+        "Implementing CI/CD pipelines and automation",
+        "Ensuring system reliability and scalability"
+      ],
+      lookingFor: [
+        "6+ years DevOps/Infrastructure experience",
+        "Strong experience with cloud platforms (AWS, GCP, Azure)",
+        "Knowledge of containerization and orchestration",
+        "Experience with monitoring and logging tools"
+      ],
+      email: "careers@aboveclooud9.ai",
+      subject: "DevOps Engineer Application"
+    },
+    {
+      icon: Code,
+      title: "Backend Lead",
+      location: "Coimbatore / Remote",
+      type: "Full-time",
+      category: "Engineering",
+      techStack: "Node.js, Python, PostgreSQL, Redis, Microservices",
+      workOn: [
+        "Leading backend development and architecture decisions",
+        "Building scalable APIs and microservices",
+        "Mentoring junior developers and code reviews"
+      ],
+      lookingFor: [
+        "6+ years backend development experience",
+        "Strong leadership and mentoring skills",
+        "Experience with system design and architecture",
+        "Knowledge of database design and optimization"
+      ],
+      email: "careers@aboveclooud9.ai",
+      subject: "Backend Lead Application"
+    },
+    {
+      icon: CheckCircle,
+      title: "QA Lead",
+      location: "Coimbatore / Remote",
+      type: "Full-time",
+      category: "Engineering",
+      techStack: "Test Automation, Selenium, Cypress, API Testing, CI/CD",
+      workOn: [
+        "Leading QA strategy and test automation initiatives",
+        "Building and maintaining test frameworks",
+        "Ensuring product quality and reliability"
+      ],
+      lookingFor: [
+        "6+ years QA/testing experience",
+        "Strong experience with test automation tools",
+        "Leadership skills and team management experience",
+        "Knowledge of agile testing methodologies"
+      ],
+      email: "careers@aboveclooud9.ai",
+      subject: "QA Lead Application"
     }
   ];
 
@@ -123,7 +168,7 @@ const Careers = () => {
             </InteractiveCard>
             
             <InteractiveCard intensity={0.3}>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+              <p className="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed max-w-3xl mx-auto transition-colors duration-300">
                 Help us create AI solutions that make a real difference in people's lives. Work with industry veterans from top tech companies.
               </p>
             </InteractiveCard>
@@ -196,7 +241,7 @@ const Careers = () => {
                 {filteredPositions.map((position, index) => (
                   <InteractiveCard
                     key={index}
-                    className="group bg-white/80 backdrop-blur-md p-8 border-2 border-gray-200/50 shadow-lg rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                    className="group bg-white/80 p-8 border-2 border-gray-200/50 shadow-lg rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                     intensity={0.8}
                   >
                     <div className="flex items-center mb-6">
@@ -253,16 +298,13 @@ const Careers = () => {
                     </div>
 
                     <div className="bg-gray-50/80 p-4 rounded-xl transition-colors duration-300 group-hover:bg-yellow-50">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center text-sm text-gray-700">
-                          <Mail className="w-4 h-4 mr-2" />
-                          <span className="font-medium">Apply Now</span>
-                        </div>
+                      <div className="text-center">
                         <a 
                           href={`mailto:${position.email}?subject=${position.subject}`}
-                          className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center"
+                          className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center justify-center mx-auto"
                         >
-                          Send Application
+                          <Mail className="w-4 h-4 mr-2" />
+                          Apply Now
                         </a>
                       </div>
                     </div>
@@ -274,7 +316,7 @@ const Careers = () => {
 
           {/* Don't See Your Role Section */}
           <InteractiveCard 
-            className="text-center bg-white/50 backdrop-blur-md p-12 shadow-lg border-2 border-gray-200/50 rounded-2xl transition-colors duration-300"
+            className="text-center bg-white/50 p-12 shadow-lg border-2 border-gray-200/50 rounded-2xl transition-colors duration-300"
             intensity={0.6}
           >
             <div className="flex items-center justify-center mb-6">
@@ -290,10 +332,10 @@ const Careers = () => {
               If you think you'd be a great fit for our mission, we'd love to hear from you.
             </p>
             <a 
-              href="mailto:careers@AboveCloud9.AI?subject=General Application"
+              href="mailto:careers@aboveclooud9.ai?subject=General Application"
               className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
             >
-              Send Us Your Resume
+              Apply Now
             </a>
           </InteractiveCard>
         </div>

@@ -3,7 +3,7 @@ import InteractiveCard from './InteractiveCard';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm text-white py-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 text-white py-16 relative overflow-hidden">
       {/* Background overlay with transparency */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10"></div>
       
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <InteractiveCard darkMode={true} intensity={0.5}>
               <div className="flex items-center space-x-2 mb-6 group">
-                <div className="w-10 h-10 bg-yellow-400/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-100">
+                <div className="w-10 h-10 bg-yellow-400/90 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-100">
                   <Cloud className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-2xl font-bold">AboveCloud9.AI</span>
@@ -35,13 +35,13 @@ const Footer = () => {
           </div>
           
           {/* Contact Information */}
-          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
+          {/* <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
             <h3 className="text-lg font-semibold mb-6 text-yellow-400">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-yellow-400" />
-                <a href="mailto:careers@AboveCloud9.AI" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
-                  careers@AboveCloud9.AI
+                <a href="mailto:careers@aboveclooud9.ai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
+                  careers@aboveclooud9.ai
                 </a>
               </div>
               <div className="flex items-start space-x-3">
@@ -53,16 +53,17 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-          </InteractiveCard>
+          </InteractiveCard> */}
           
           {/* Quick Links */}
-          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
+          <InteractiveCard darkMode={true} intensity={0.6} className="bg-white/5 p-6 rounded-lg border border-white/10">
             <h3 className="text-lg font-semibold mb-6 text-yellow-400">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { label: 'About', href: '/#about' },
                 { label: 'Careers', href: '/careers' },
-                { label: 'Life at AC9', href: '/life-at-ac9' }
+                { label: 'Life at AC9', href: '/life-at-ac9' },
+                { label: 'Contact', href: '/contact' }
               ].map((item, index) => (
                 <li key={index}>
                   <a href={item.href} className="text-gray-300 hover:text-yellow-400 transition-all duration-100 hover:translate-x-2 inline-block group">
@@ -74,10 +75,10 @@ const Footer = () => {
           </InteractiveCard>
         </div>
         
-        <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 pt-8 bg-white/5 backdrop-blur-sm rounded-lg p-6 mt-8">
+        <InteractiveCard darkMode={true} intensity={0.4} className="border-t border-white/20 pt-8 bg-white/5 rounded-lg p-6 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 mb-4 md:mb-0">
-              © 2024 AboveCloud9.AI. All rights reserved.
+              © 2025 AboveCloud9.AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {['Privacy Policy', 'Terms of Service'].map((item, index) => (

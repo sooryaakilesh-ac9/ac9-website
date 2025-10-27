@@ -196,22 +196,33 @@ const LifeAtAC9 = () => {
     }
   ];
 
-  // Company activities and trips
-  const activities = [
+  // Recent activities and trips
+  const recentActivities = [
     {
-      title: "Team Hackathon 2024",
+      title: "DevOps Hackathon",
       date: "March 2024",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
-      description: "48-hour innovation sprint where our team built amazing prototypes",
-      participants: "12 team members"
+      description: "Intensive DevOps skills competition where our team showcased automation and infrastructure expertise",
+      participants: "8 team members"
     },
     {
-      title: "Ooty Team Retreat",
+      title: "Team Dinner",
       date: "February 2024", 
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-      description: "Mountain retreat for team bonding and strategic planning",
+      description: "Monthly team bonding dinner celebrating our achievements and strengthening team connections",
       participants: "Entire team"
     },
+    {
+      title: "Cricket Evenings",
+      date: "Weekly",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop",
+      description: "Regular cricket matches that bring our team together for fun, fitness, and friendly competition",
+      participants: "All interested"
+    }
+  ];
+
+  // Regular activities
+  const regularActivities = [
     {
       title: "Office Game Night",
       date: "Weekly",
@@ -220,18 +231,11 @@ const LifeAtAC9 = () => {
       participants: "Open to all"
     },
     {
-      title: "AI Conference Mumbai",
-      date: "January 2024",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop",
-      description: "Team attended India's largest AI conference for learning and networking",
-      participants: "6 team members"
-    },
-    {
-      title: "Coimbatore Tech Meetup",
+      title: "Technical Hackathons",
       date: "Monthly",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop",
-      description: "Hosting and participating in local tech community events",
-      participants: "Tech community"
+      description: "Internal technical hackathons where we innovate, prototype, and solve challenging problems together",
+      participants: "Tech team"
     },
     {
       title: "Wellness Wednesday",
@@ -294,16 +298,6 @@ const LifeAtAC9 = () => {
       description: "Fuel your creativity with premium coffee and healthy snacks available 24/7."
     },
     {
-      icon: Gamepad2,
-      title: "Game Zone",
-      description: "Unwind with our gaming setup, board games, and recreational activities."
-    },
-    {
-      icon: Music,
-      title: "Music & Creative Space",
-      description: "Jam sessions, creative corners, and spaces designed to inspire innovation."
-    },
-    {
       icon: Heart,
       title: "Health & Wellness",
       description: "Comprehensive health insurance, gym memberships, and wellness programs."
@@ -312,11 +306,6 @@ const LifeAtAC9 = () => {
       icon: Brain,
       title: "Learning Budget",
       description: "Annual budget for courses, conferences, and skill development opportunities."
-    },
-    {
-      icon: Globe,
-      title: "Flexible Work",
-      description: "Hybrid work model with flexible hours and remote work options."
     }
   ];
 
@@ -359,30 +348,30 @@ const LifeAtAC9 = () => {
         </div>
       </section>
 
-      {/* Activities & Trips */}
+      {/* Recent Activities & Trips */}
       <section className="py-20 bg-gradient-to-br from-yellow-50/50 via-white to-yellow-100/30 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 border-2 border-green-300 text-green-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
               <Camera className="w-6 h-6 mr-3 text-green-600" />
-              ACTIVITIES & TRIPS
+              RECENT ACTIVITIES
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
-              Life Beyond <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Code</span>
+              Recent <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Highlights</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
-              We believe great work happens when great people connect. Here's how we build bonds beyond the office.
+              Our latest team adventures and special events that brought us together.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {activities.map((activity, index) => (
+            {recentActivities.map((activity, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 backdrop-blur-xl rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast overflow-hidden group"
+                className="bg-white/80 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast overflow-hidden group h-[400px] flex flex-col"
                 intensity={0.8}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden flex-shrink-0">
                   <img
                     src={activity.image}
                     alt={activity.title}
@@ -395,13 +384,69 @@ const LifeAtAC9 = () => {
                   </div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-200">
                     {activity.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{activity.description}</p>
+                  <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{activity.description}</p>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Users className="w-4 h-4 mr-1" />
+                      {activity.participants}
+                    </div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+              </InteractiveCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Regular Activities */}
+      <section className="py-20 bg-gradient-to-br from-gray-50/50 via-white to-gray-50/30 relative overflow-hidden transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 border-2 border-blue-300 text-blue-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
+              <Calendar className="w-6 h-6 mr-3 text-blue-600" />
+              REGULAR ACTIVITIES
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
+              Ongoing <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">Traditions</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+              Our regular activities that keep our team connected and energized throughout the year.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularActivities.map((activity, index) => (
+              <InteractiveCard
+                key={index}
+                className="bg-white/80 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-200 card-hover-fast overflow-hidden group h-[400px] flex flex-col"
+                intensity={0.8}
+              >
+                <div className="relative h-48 overflow-hidden flex-shrink-0">
+                  <img
+                    src={activity.image}
+                    alt={activity.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-bold">
+                      {activity.date}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-200">
+                    {activity.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{activity.description}</p>
+                  
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center text-sm text-gray-500">
                       <Users className="w-4 h-4 mr-1" />
                       {activity.participants}
@@ -434,10 +479,10 @@ const LifeAtAC9 = () => {
                 className="group relative"
                 intensity={0.8}
               >
-                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-300 h-full relative overflow-hidden">
+                <div className="bg-white/80 p-8 rounded-2xl border-2 border-gray-200/50 shadow-medium hover:shadow-strong transition-all duration-300 h-[400px] relative overflow-hidden flex flex-col">
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
                   
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className="text-4xl mb-4 animate-float-fast">{card.emoji}</div>
                     <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300">
                       {card.title}
@@ -445,7 +490,7 @@ const LifeAtAC9 = () => {
                     <p className="text-lg font-bold text-yellow-600 mb-4 transition-colors duration-300">
                       {card.subtitle}
                     </p>
-                    <p className="text-gray-600 leading-relaxed transition-colors duration-300">
+                    <p className="text-gray-600 leading-relaxed transition-colors duration-300 flex-grow">
                       {card.description}
                     </p>
                   </div>
@@ -472,14 +517,14 @@ const LifeAtAC9 = () => {
             {perks.map((perk, index) => (
               <InteractiveCard
                 key={index}
-                className="bg-white/80 backdrop-blur-xl p-6 rounded-xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast"
+                className="bg-white/80 p-6 rounded-xl border-2 border-yellow-200/50 shadow-medium hover:shadow-yellow-lg transition-all duration-200 card-hover-fast h-[300px] flex flex-col"
                 intensity={0.7}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mb-4 shadow-yellow">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mb-4 shadow-yellow flex-shrink-0">
                   <perk.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300">{perk.title}</h3>
-                <p className="text-gray-600 leading-relaxed transition-colors duration-300">{perk.description}</p>
+                <p className="text-gray-600 leading-relaxed transition-colors duration-300 flex-grow">{perk.description}</p>
               </InteractiveCard>
             ))}
           </div>
@@ -487,7 +532,7 @@ const LifeAtAC9 = () => {
       </section>
 
       {/* Enhanced Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden transition-colors duration-300">
+      {/* <section className="py-20 bg-gradient-to-br from-white via-yellow-50/20 to-white relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 border-2 border-blue-300 text-blue-800 text-lg font-bold rounded-full shadow-medium mb-8 transition-colors duration-300">
@@ -540,7 +585,7 @@ const LifeAtAC9 = () => {
             <div className="text-center">
               <InteractiveCard intensity={1.0}>
                 <a
-                  href={`mailto:careers@AboveCloud9.AI?subject=${
+                  href={`mailto:careers@aboveclooud9.ai?subject=${
                     contactType === 'automate' ? 'Automation Inquiry' :
                     contactType === 'partnership' ? 'Partnership Discussion' :
                     contactType === 'work' ? 'Career Opportunity' :
@@ -556,10 +601,10 @@ const LifeAtAC9 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-100/60 to-yellow-200/40 backdrop-blur-xl relative overflow-hidden transition-colors duration-300">
+      <section className="py-20 bg-gradient-to-br from-yellow-100/60 to-yellow-200/40 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <InteractiveCard intensity={0.5}>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 transition-colors duration-300">
@@ -586,7 +631,7 @@ const LifeAtAC9 = () => {
             
             <InteractiveCard intensity={0.8}>
               <a
-                href="mailto:careers@AboveCloud9.AI?subject=General Application"
+                href="mailto:careers@aboveclooud9.ai?subject=General Application"
                 className="inline-block bg-white hover:bg-gray-50 text-gray-800 border-2 border-yellow-500 hover:border-yellow-600 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-150 hover:scale-110 shadow-strong"
               >
                 Get in Touch
